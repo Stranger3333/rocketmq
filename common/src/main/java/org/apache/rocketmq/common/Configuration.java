@@ -81,7 +81,7 @@ public class Configuration {
                 Properties registerProps = MixAll.object2Properties(configObject);
 
                 merge(registerProps, this.allConfigs);
-
+                 
                 configObjectList.add(configObject);
             } finally {
                 readWriteLock.writeLock().unlock();
@@ -316,18 +316,23 @@ public class Configuration {
 
         return stringBuilder.toString();
     }
-
-    private void merge(Properties from, Properties to) {
+    private void merge(Properties from, Properties to){
+         merge(from, to, true);
+    }
+    private void merge(Properties from, Properties to, boolean log_enabled) {
         for (Entry<Object, Object> next : from.entrySet()) {
             Object fromObj = next.getValue(), toObj = to.get(next.getKey());
             if (toObj != null && !toObj.equals(fromObj)) {
                 log.info("Replace, key: {}, value: {} -> {}", next.getKey(), toObj, fromObj);
+                if(log_enabled) log.warn("[CTEST][SET-PARAM] " + next.getKey() + getStackTrace());
             }
             to.put(next.getKey(), fromObj);
         }
     }
-
-    private void mergeIfExist(Properties from, Properties to) {
+    private void mergeIfExist(Properties from, Properties to){
+        mergeIfExist(from, to, true);
+   }
+    private void mergeIfExist(Properties from, Properties to,boolean log_enabled) {
         for (Entry<Object, Object> next : from.entrySet()) {
             if (!to.containsKey(next.getKey())) {
                 continue;
@@ -336,9 +341,18 @@ public class Configuration {
             Object fromObj = next.getValue(), toObj = to.get(next.getKey());
             if (toObj != null && !toObj.equals(fromObj)) {
                 log.info("Replace, key: {}, value: {} -> {}", next.getKey(), toObj, fromObj);
+                if(log_enabled) log.warn("[CTEST][SET-PARAM] " + next.getKey() + getStackTrace());
             }
             to.put(next.getKey(), fromObj);
         }
     }
+    // attempted addition to get CONF Parameters
+    private String getStackTrace() {
+        String stacktrace = " ";
+        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+          stacktrace = stacktrace.concat(element.getClassName() + "\t");
+        }
+        return stacktrace;
+      }
 
 }
