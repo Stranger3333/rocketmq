@@ -318,7 +318,7 @@ public class Configuration {
     }
     // Imitate GET/SET Example
     private void merge(Properties from, Properties to) {
-         merge(from, to, true);
+        merge(from, to, true);
     }
     private void merge(Properties from, Properties to, boolean enable) {
         for (Entry<Object, Object> next : from.entrySet()) {
@@ -336,7 +336,7 @@ public class Configuration {
     // Imitate GET/SET Example
     private void mergeIfExist(Properties from, Properties to) {
         mergeIfExist(from, to,true);
-   }
+    }
 
     private void mergeIfExist(Properties from, Properties to,boolean enable) {
         for (Entry<Object, Object> next : from.entrySet()) {
@@ -359,7 +359,7 @@ public class Configuration {
     private String getStackTrace() {
         String stacktrace = " ";
         for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
-          stacktrace = stacktrace.concat(element.getClassName() + "\t");
+            stacktrace = stacktrace.concat(element.getClassName() + "\t");
         }
         return stacktrace;
     }
