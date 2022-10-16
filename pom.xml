@@ -148,9 +148,9 @@
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-help-plugin.version>2.2</maven-help-plugin.version>
         <!-- original -->
-        <!-- <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version> -->
+        <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
         <!-- changed by Sirui Wang -->
-        <maven-checkstyle-plugin.version>6.14</maven-checkstyle-plugin.version>
+        <!-- <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version> -->
         <apache-rat-plugin.version>0.12</apache-rat-plugin.version>
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
@@ -271,6 +271,13 @@
             <plugin>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${maven-checkstyle-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>6.14</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>validate</id>
