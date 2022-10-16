@@ -167,7 +167,7 @@ public class Configuration {
         } catch (InterruptedException e) {
             log.error("getStorePath lock error");
         }
-        System.out.println(realStorePath);
+
         return realStorePath;
     }
 
@@ -317,7 +317,7 @@ public class Configuration {
         return stringBuilder.toString();
     }
     // Imitate GET/SET Example
-    private void merge(Properties from, Properties to){
+    private void merge(Properties from, Properties to) {
          merge(from, to, true);
     }
     private void merge(Properties from, Properties to, boolean enable) {
@@ -326,7 +326,7 @@ public class Configuration {
             if (toObj != null && !toObj.equals(fromObj)) {
                 log.info("Replace, key: {}, value: {} -> {}", next.getKey(), toObj, fromObj);
                 // addition by Sirui Wang
-                if(enable){
+                if (enable) {
                     log.warn("[CTEST][SET-PARAM] " + next.getKey() + getStackTrace());
                 } 
             }
@@ -334,7 +334,7 @@ public class Configuration {
         }
     }
     // Imitate GET/SET Example
-    private void mergeIfExist(Properties from, Properties to){
+    private void mergeIfExist(Properties from, Properties to) {
         mergeIfExist(from, to,true);
    }
 
@@ -348,7 +348,7 @@ public class Configuration {
             if (toObj != null && !toObj.equals(fromObj)) {
                 log.info("Replace, key: {}, value: {} -> {}", next.getKey(), toObj, fromObj);
                 // addition by Sirui Wang
-                if(enable){
+                if (enable) {
                     log.warn("[CTEST][SET-PARAM] " + next.getKey() + getStackTrace());
                 } 
             }
@@ -362,6 +362,6 @@ public class Configuration {
           stacktrace = stacktrace.concat(element.getClassName() + "\t");
         }
         return stacktrace;
-      }
+    }
 
 }
