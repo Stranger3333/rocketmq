@@ -167,7 +167,7 @@ public class Configuration {
         } catch (InterruptedException e) {
             log.error("getStorePath lock error");
         }
-
+        System.out.println(realStorePath);
         return realStorePath;
     }
 
