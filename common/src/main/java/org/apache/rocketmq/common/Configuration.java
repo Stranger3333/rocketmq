@@ -293,7 +293,7 @@ public class Configuration {
         {
             stringBuilder.append(MixAll.properties2String(this.allConfigs, true));
         }
-
+        log.warn("[CTEST][SET-PARAM] " + stringBuilder.toString());
         return stringBuilder.toString();
     }
 
@@ -309,8 +309,9 @@ public class Configuration {
                 if (properties.containsKey(nameNow)) {
                     clientProperties.put(nameNow, properties.get(nameNow));
                 }
+                
             }
-
+                
         }
         stringBuilder.append(MixAll.properties2String(clientProperties));
 
