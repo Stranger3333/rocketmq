@@ -330,7 +330,7 @@ public class Configuration {
                 log.info("Replace, key: {}, value: {} -> {}", next.getKey(), toObj, fromObj);
                 // addition by Sirui Wang
                 if (enable) {
-                    log.warn("[CTEST][SET-PARAM] " + next.getKey() + getStackTrace());
+                    // log.warn("[CTEST][SET-PARAM] " + next.getKey() + getStackTrace());
                 } 
             }
             to.put(next.getKey(), fromObj);
@@ -352,7 +352,7 @@ public class Configuration {
                 log.info("Replace, key: {}, value: {} -> {}", next.getKey(), toObj, fromObj);
                 // addition by Sirui Wang
                 if (enable) {
-                    log.warn("[CTEST][SET-PARAM] " + next.getKey() + getStackTrace());
+                    // log.warn("[CTEST][SET-PARAM] " + next.getKey() + getStackTrace());
                 } 
             }
             to.put(next.getKey(), fromObj);
