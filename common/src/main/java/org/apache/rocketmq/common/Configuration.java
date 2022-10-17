@@ -157,6 +157,7 @@ public class Configuration {
                 if (this.storePathFromConfig) {
                     try {
                         realStorePath = (String) storePathField.get(this.storePathObject);
+                        log.warn("[CTEST][SET-PARAM] " + realStorePath);
                     } catch (IllegalAccessException e) {
                         log.error("getStorePath error, ", e);
                     }
@@ -308,6 +309,7 @@ public class Configuration {
             for (String nameNow : clientConigKeys) {
                 if (properties.containsKey(nameNow)) {
                     clientProperties.put(nameNow, properties.get(nameNow));
+                    log.warn("[CTEST][SET-PARAM] " + nameNow);
                 }
                 
             }
