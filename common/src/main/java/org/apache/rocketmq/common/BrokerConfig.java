@@ -308,759 +308,1045 @@ public class BrokerConfig extends BrokerIdentity {
 
     private long syncControllerMetadataPeriod = 10 * 1000;
 
+    private String getStackTrace() {
+        String stacktrace = " ";
+        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+          stacktrace = stacktrace.concat(element.getClassName() + "\t");
+        }
+        return stacktrace;
+    }
+    
     public long getMaxPopPollingSize() {
+        log.warn("[CTEST][GET-PARAM] " + "maxPopPollingSize"); //CTEST
         return maxPopPollingSize;
     }
 
     public void setMaxPopPollingSize(long maxPopPollingSize) {
+        log.warn("[CTEST][SET-PARAM] " + "maxPopPollingSize" + getStackTrace()); //CTEST
         this.maxPopPollingSize = maxPopPollingSize;
     }
 
     public int getReviveQueueNum() {
+        log.warn("[CTEST][GET-PARAM] " + "reviveQueueNum"); //CTEST
         return reviveQueueNum;
     }
 
     public void setReviveQueueNum(int reviveQueueNum) {
+        log.warn("[CTEST][SET-PARAM] " + "reviveQueueNum" + getStackTrace()); //CTEST
         this.reviveQueueNum = reviveQueueNum;
     }
 
     public long getReviveInterval() {
+        log.warn("[CTEST][GET-PARAM] " + "reviveInterval"); //CTEST
         return reviveInterval;
     }
 
     public void setReviveInterval(long reviveInterval) {
+        log.warn("[CTEST][SET-PARAM] " + "reviveInterval" + getStackTrace()); //CTEST
         this.reviveInterval = reviveInterval;
     }
 
     public int getPopCkStayBufferTime() {
+        log.warn("[CTEST][GET-PARAM] " + "popCkStayBufferTime"); //CTEST
         return popCkStayBufferTime;
     }
 
     public void setPopCkStayBufferTime(int popCkStayBufferTime) {
+        log.warn("[CTEST][SET-PARAM] " + "popCkStayBufferTime" + getStackTrace()); //CTEST
         this.popCkStayBufferTime = popCkStayBufferTime;
     }
 
     public int getPopCkStayBufferTimeOut() {
+        log.warn("[CTEST][GET-PARAM] " + "popCkStayBufferTimeOut"); //CTEST
         return popCkStayBufferTimeOut;
     }
 
     public void setPopCkStayBufferTimeOut(int popCkStayBufferTimeOut) {
+        log.warn("[CTEST][SET-PARAM] " + "popCkStayBufferTimeOut" + getStackTrace()); //CTEST
+
         this.popCkStayBufferTimeOut = popCkStayBufferTimeOut;
     }
 
     public int getPopPollingMapSize() {
+        log.warn("[CTEST][GET-PARAM] " + "popPollingMapSize"); //CTEST
         return popPollingMapSize;
     }
 
     public void setPopPollingMapSize(int popPollingMapSize) {
+        log.warn("[CTEST][SET-PARAM] " + "popPollingMapSize" + getStackTrace()); //CTEST
+
         this.popPollingMapSize = popPollingMapSize;
     }
 
     public long getReviveScanTime() {
+        log.warn("[CTEST][GET-PARAM] " + "reviveScanTime"); //CTEST
         return reviveScanTime;
     }
 
     public void setReviveScanTime(long reviveScanTime) {
+        log.warn("[CTEST][SET-PARAM] " + "reviveScanTime" + getStackTrace()); //CTEST
         this.reviveScanTime = reviveScanTime;
     }
 
     public long getReviveMaxSlow() {
+        log.warn("[CTEST][GET-PARAM] " + "reviveMaxSlow"); //CTEST
         return reviveMaxSlow;
     }
 
     public void setReviveMaxSlow(long reviveMaxSlow) {
+        log.warn("[CTEST][SET-PARAM] " + "reviveMaxSlow" + getStackTrace()); //CTEST
+
         this.reviveMaxSlow = reviveMaxSlow;
     }
 
     public int getPopPollingSize() {
+        log.warn("[CTEST][GET-PARAM] " + "popPollingSize"); //CTEST
         return popPollingSize;
     }
 
     public void setPopPollingSize(int popPollingSize) {
+        log.warn("[CTEST][SET-PARAM] " + "popPollingSize" + getStackTrace()); //CTEST
+
         this.popPollingSize = popPollingSize;
     }
 
     public boolean isEnablePopBufferMerge() {
+        log.warn("[CTEST][GET-PARAM] " + "enablePopBufferMerge"); //CTEST
         return enablePopBufferMerge;
     }
 
     public void setEnablePopBufferMerge(boolean enablePopBufferMerge) {
+        log.warn("[CTEST][SET-PARAM] " + "enablePopBufferMerge" + getStackTrace()); //CTEST
+
         this.enablePopBufferMerge = enablePopBufferMerge;
     }
 
     public int getPopCkMaxBufferSize() {
+        log.warn("[CTEST][GET-PARAM] " + "popCkMaxBufferSize"); //CTEST
         return popCkMaxBufferSize;
     }
 
     public void setPopCkMaxBufferSize(int popCkMaxBufferSize) {
+        log.warn("[CTEST][SET-PARAM] " + "popCkMaxBufferSize" + getStackTrace()); //CTEST
+
         this.popCkMaxBufferSize = popCkMaxBufferSize;
     }
 
     public int getPopCkOffsetMaxQueueSize() {
+        log.warn("[CTEST][GET-PARAM] " + "popCkOffsetMaxQueueSize"); //CTEST
         return popCkOffsetMaxQueueSize;
     }
 
     public void setPopCkOffsetMaxQueueSize(int popCkOffsetMaxQueueSize) {
+        log.warn("[CTEST][SET-PARAM] " + "popCkOffsetMaxQueueSize" + getStackTrace()); //CTEST
+
         this.popCkOffsetMaxQueueSize = popCkOffsetMaxQueueSize;
     }
 
     public boolean isEnablePopLog() {
+        log.warn("[CTEST][GET-PARAM] " + "enablePopLog"); //CTEST
         return enablePopLog;
     }
 
     public void setEnablePopLog(boolean enablePopLog) {
+        log.warn("[CTEST][SET-PARAM] " + "enablePopLog" + getStackTrace()); //CTEST
+
         this.enablePopLog = enablePopLog;
     }
 
     public boolean isTraceOn() {
+        log.warn("[CTEST][GET-PARAM] " + "traceOn"); //CTEST
         return traceOn;
     }
 
     public void setTraceOn(final boolean traceOn) {
+        log.warn("[CTEST][SET-PARAM] " + "traceOn" + getStackTrace()); //CTEST
+
         this.traceOn = traceOn;
     }
 
     public long getStartAcceptSendRequestTimeStamp() {
+        log.warn("[CTEST][GET-PARAM] " + "startAcceptSendRequestTimeStamp"); //CTEST
         return startAcceptSendRequestTimeStamp;
     }
 
     public void setStartAcceptSendRequestTimeStamp(final long startAcceptSendRequestTimeStamp) {
+        log.warn("[CTEST][SET-PARAM] " + "startAcceptSendRequestTimeStamp" + getStackTrace()); //CTEST
+
         this.startAcceptSendRequestTimeStamp = startAcceptSendRequestTimeStamp;
     }
 
     public long getWaitTimeMillsInSendQueue() {
+        log.warn("[CTEST][GET-PARAM] " + "waitTimeMillsInSendQueue"); //CTEST
         return waitTimeMillsInSendQueue;
     }
 
     public void setWaitTimeMillsInSendQueue(final long waitTimeMillsInSendQueue) {
+        log.warn("[CTEST][SET-PARAM] " + "waitTimeMillsInSendQueue" + getStackTrace()); //CTEST
+
         this.waitTimeMillsInSendQueue = waitTimeMillsInSendQueue;
     }
 
     public long getConsumerFallbehindThreshold() {
+        log.warn("[CTEST][GET-PARAM] " + "consumerFallbehindThreshold"); //CTEST
         return consumerFallbehindThreshold;
     }
 
     public void setConsumerFallbehindThreshold(final long consumerFallbehindThreshold) {
+        log.warn("[CTEST][SET-PARAM] " + "consumerFallbehindThreshold" + getStackTrace()); //CTEST
+
         this.consumerFallbehindThreshold = consumerFallbehindThreshold;
     }
 
     public boolean isBrokerFastFailureEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "brokerFastFailureEnable"); //CTEST
         return brokerFastFailureEnable;
     }
 
     public void setBrokerFastFailureEnable(final boolean brokerFastFailureEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "brokerFastFailureEnable" + getStackTrace()); //CTEST
+
         this.brokerFastFailureEnable = brokerFastFailureEnable;
     }
 
     public long getWaitTimeMillsInPullQueue() {
+        log.warn("[CTEST][GET-PARAM] " + "waitTimeMillsInPullQueue"); //CTEST
         return waitTimeMillsInPullQueue;
     }
 
     public void setWaitTimeMillsInPullQueue(final long waitTimeMillsInPullQueue) {
+        log.warn("[CTEST][SET-PARAM] " + "waitTimeMillsInPullQueue" + getStackTrace()); //CTEST
+
         this.waitTimeMillsInPullQueue = waitTimeMillsInPullQueue;
     }
 
     public boolean isDisableConsumeIfConsumerReadSlowly() {
+        log.warn("[CTEST][GET-PARAM] " + "disableConsumeIfConsumerReadSlowly"); //CTEST
         return disableConsumeIfConsumerReadSlowly;
     }
 
     public void setDisableConsumeIfConsumerReadSlowly(final boolean disableConsumeIfConsumerReadSlowly) {
+        log.warn("[CTEST][SET-PARAM] " + "disableConsumeIfConsumerReadSlowly" + getStackTrace()); //CTEST
+
         this.disableConsumeIfConsumerReadSlowly = disableConsumeIfConsumerReadSlowly;
     }
 
     public boolean isSlaveReadEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "slaveReadEnable"); //CTEST
         return slaveReadEnable;
     }
 
     public void setSlaveReadEnable(final boolean slaveReadEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "slaveReadEnable" + getStackTrace()); //CTEST
+
         this.slaveReadEnable = slaveReadEnable;
     }
 
     public int getRegisterBrokerTimeoutMills() {
+        log.warn("[CTEST][GET-PARAM] " + "registerBrokerTimeoutMills"); //CTEST
         return registerBrokerTimeoutMills;
     }
 
     public void setRegisterBrokerTimeoutMills(final int registerBrokerTimeoutMills) {
+        log.warn("[CTEST][SET-PARAM] " + "registerBrokerTimeoutMills" + getStackTrace()); //CTEST
+
         this.registerBrokerTimeoutMills = registerBrokerTimeoutMills;
     }
 
     public String getRegionId() {
+        log.warn("[CTEST][GET-PARAM] " + "regionId"); //CTEST
         return regionId;
     }
 
     public void setRegionId(final String regionId) {
+        log.warn("[CTEST][SET-PARAM] " + "regionId" + getStackTrace()); //CTEST
+
         this.regionId = regionId;
     }
 
     public boolean isTransferMsgByHeap() {
+        log.warn("[CTEST][GET-PARAM] " + "transferMsgByHeap"); //CTEST
         return transferMsgByHeap;
     }
 
     public void setTransferMsgByHeap(final boolean transferMsgByHeap) {
+        log.warn("[CTEST][SET-PARAM] " + "transferMsgByHeap" + getStackTrace()); //CTEST
+
         this.transferMsgByHeap = transferMsgByHeap;
     }
 
     public String getMessageStorePlugIn() {
+        log.warn("[CTEST][GET-PARAM] " + "messageStorePlugIn"); //CTEST
         return messageStorePlugIn;
     }
 
     public void setMessageStorePlugIn(String messageStorePlugIn) {
+        log.warn("[CTEST][SET-PARAM] " + "messageStorePlugIn" + getStackTrace()); //CTEST
+
         this.messageStorePlugIn = messageStorePlugIn;
     }
 
     public boolean isHighSpeedMode() {
+        log.warn("[CTEST][GET-PARAM] " + "highSpeedMode"); //CTEST
         return highSpeedMode;
     }
 
     public void setHighSpeedMode(final boolean highSpeedMode) {
+        log.warn("[CTEST][SET-PARAM] " + "highSpeedMode" + getStackTrace()); //CTEST
+
         this.highSpeedMode = highSpeedMode;
     }
 
     public int getBrokerPermission() {
+        log.warn("[CTEST][GET-PARAM] " + "brokerPermission"); //CTEST
         return brokerPermission;
     }
 
     public void setBrokerPermission(int brokerPermission) {
+        log.warn("[CTEST][SET-PARAM] " + "brokerPermission" + getStackTrace()); //CTEST
+
         this.brokerPermission = brokerPermission;
     }
 
     public int getDefaultTopicQueueNums() {
+        log.warn("[CTEST][GET-PARAM] " + "defaultTopicQueueNums"); //CTEST
         return defaultTopicQueueNums;
     }
 
     public void setDefaultTopicQueueNums(int defaultTopicQueueNums) {
+        log.warn("[CTEST][SET-PARAM] " + "defaultTopicQueueNums" + getStackTrace()); //CTEST
+
         this.defaultTopicQueueNums = defaultTopicQueueNums;
     }
 
     public boolean isAutoCreateTopicEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "autoCreateTopicEnable"); //CTEST
         return autoCreateTopicEnable;
     }
 
     public void setAutoCreateTopicEnable(boolean autoCreateTopic) {
+        log.warn("[CTEST][SET-PARAM] " + "autoCreateTopic" + getStackTrace()); //CTEST
+
         this.autoCreateTopicEnable = autoCreateTopic;
     }
 
     public String getBrokerIP1() {
+        log.warn("[CTEST][GET-PARAM] " + "brokerIP1"); //CTEST
         return brokerIP1;
     }
 
     public void setBrokerIP1(String brokerIP1) {
+        log.warn("[CTEST][SET-PARAM] " + "brokerIP1" + getStackTrace()); //CTEST
+
         this.brokerIP1 = brokerIP1;
     }
 
     public String getBrokerIP2() {
+        log.warn("[CTEST][GET-PARAM] " + "brokerIP2"); //CTEST
         return brokerIP2;
     }
 
     public void setBrokerIP2(String brokerIP2) {
+        log.warn("[CTEST][SET-PARAM] " + "brokerIP2" + getStackTrace()); //CTEST
+
         this.brokerIP2 = brokerIP2;
     }
 
     public int getSendMessageThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "sendMessageThreadPoolNums"); //CTEST
         return sendMessageThreadPoolNums;
     }
 
     public void setSendMessageThreadPoolNums(int sendMessageThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "sendMessageThreadPoolNums" + getStackTrace()); //CTEST
+
         this.sendMessageThreadPoolNums = sendMessageThreadPoolNums;
     }
 
     public int getPutMessageFutureThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "putMessageFutureThreadPoolNums"); //CTEST
         return putMessageFutureThreadPoolNums;
     }
 
     public void setPutMessageFutureThreadPoolNums(int putMessageFutureThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "putMessageFutureThreadPoolNums" + getStackTrace()); //CTEST
+
         this.putMessageFutureThreadPoolNums = putMessageFutureThreadPoolNums;
     }
 
     public int getPullMessageThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "pullMessageThreadPoolNums"); //CTEST
         return pullMessageThreadPoolNums;
     }
 
     public void setPullMessageThreadPoolNums(int pullMessageThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "pullMessageThreadPoolNums" + getStackTrace()); //CTEST
+
         this.pullMessageThreadPoolNums = pullMessageThreadPoolNums;
     }
 
     public int getAckMessageThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "ackMessageThreadPoolNums"); //CTEST
         return ackMessageThreadPoolNums;
     }
 
     public void setAckMessageThreadPoolNums(int ackMessageThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "ackMessageThreadPoolNums" + getStackTrace()); //CTEST
+
         this.ackMessageThreadPoolNums = ackMessageThreadPoolNums;
     }
 
     public int getProcessReplyMessageThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "processReplyMessageThreadPoolNums"); //CTEST
         return processReplyMessageThreadPoolNums;
     }
 
     public void setProcessReplyMessageThreadPoolNums(int processReplyMessageThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "processReplyMessageThreadPoolNums" + getStackTrace()); //CTEST
+
         this.processReplyMessageThreadPoolNums = processReplyMessageThreadPoolNums;
     }
 
     public int getQueryMessageThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "queryMessageThreadPoolNums"); //CTEST
         return queryMessageThreadPoolNums;
     }
 
     public void setQueryMessageThreadPoolNums(final int queryMessageThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "queryMessageThreadPoolNums" + getStackTrace()); //CTEST
+
         this.queryMessageThreadPoolNums = queryMessageThreadPoolNums;
     }
 
     public int getAdminBrokerThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "adminBrokerThreadPoolNums"); //CTEST
         return adminBrokerThreadPoolNums;
     }
 
     public void setAdminBrokerThreadPoolNums(int adminBrokerThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "adminBrokerThreadPoolNums" + getStackTrace()); //CTEST
+
         this.adminBrokerThreadPoolNums = adminBrokerThreadPoolNums;
     }
 
     public int getFlushConsumerOffsetInterval() {
+        log.warn("[CTEST][GET-PARAM] " + "flushConsumerOffsetInterval"); //CTEST
         return flushConsumerOffsetInterval;
     }
 
     public void setFlushConsumerOffsetInterval(int flushConsumerOffsetInterval) {
+        log.warn("[CTEST][SET-PARAM] " + "flushConsumerOffsetInterval" + getStackTrace()); //CTEST
+
         this.flushConsumerOffsetInterval = flushConsumerOffsetInterval;
     }
 
     public int getFlushConsumerOffsetHistoryInterval() {
+        log.warn("[CTEST][GET-PARAM] " + "flushConsumerOffsetHistoryInterval"); //CTEST
         return flushConsumerOffsetHistoryInterval;
     }
 
     public void setFlushConsumerOffsetHistoryInterval(int flushConsumerOffsetHistoryInterval) {
+        log.warn("[CTEST][SET-PARAM] " + "flushConsumerOffsetHistoryInterval" + getStackTrace()); //CTEST
+
         this.flushConsumerOffsetHistoryInterval = flushConsumerOffsetHistoryInterval;
     }
 
     public boolean isClusterTopicEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "clusterTopicEnable"); //CTEST
         return clusterTopicEnable;
     }
 
     public void setClusterTopicEnable(boolean clusterTopicEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "clusterTopicEnable" + getStackTrace()); //CTEST
+
         this.clusterTopicEnable = clusterTopicEnable;
     }
 
     public String getNamesrvAddr() {
+        log.warn("[CTEST][GET-PARAM] " + "namesrvAddr"); //CTEST
         return namesrvAddr;
     }
 
     public void setNamesrvAddr(String namesrvAddr) {
+        log.warn("[CTEST][SET-PARAM] " + "namesrvAddr" + getStackTrace()); //CTEST
+
         this.namesrvAddr = namesrvAddr;
     }
 
     public boolean isAutoCreateSubscriptionGroup() {
+        log.warn("[CTEST][GET-PARAM] " + "autoCreateSubscriptionGroup"); //CTEST
         return autoCreateSubscriptionGroup;
     }
 
     public void setAutoCreateSubscriptionGroup(boolean autoCreateSubscriptionGroup) {
+        log.warn("[CTEST][SET-PARAM] " + "autoCreateSubscriptionGroup" + getStackTrace()); //CTEST
+
         this.autoCreateSubscriptionGroup = autoCreateSubscriptionGroup;
     }
 
     public String getBrokerConfigPath() {
+        log.warn("[CTEST][GET-PARAM] " + "brokerConfigPath"); //CTEST
         return brokerConfigPath;
     }
 
     public void setBrokerConfigPath(String brokerConfigPath) {
+        log.warn("[CTEST][SET-PARAM] " + "brokerConfigPath" + getStackTrace()); //CTEST
+
         this.brokerConfigPath = brokerConfigPath;
     }
 
     public String getRocketmqHome() {
+        log.warn("[CTEST][GET-PARAM] " + "rocketmqHome"); //CTEST
         return rocketmqHome;
     }
 
     public void setRocketmqHome(String rocketmqHome) {
+        log.warn("[CTEST][SET-PARAM] " + "rocketmqHome" + getStackTrace()); //CTEST
+
         this.rocketmqHome = rocketmqHome;
     }
 
     public int getListenPort() {
+        log.warn("[CTEST][GET-PARAM] " + "listenPort"); //CTEST
         return listenPort;
     }
 
     public void setListenPort(int listenPort) {
+        log.warn("[CTEST][SET-PARAM] " + "listenPort" + getStackTrace()); //CTEST
+
         this.listenPort = listenPort;
     }
 
     public int getLitePullMessageThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "litePullMessageThreadPoolNums"); //CTEST
         return litePullMessageThreadPoolNums;
     }
 
     public void setLitePullMessageThreadPoolNums(int litePullMessageThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "litePullMessageThreadPoolNums" + getStackTrace()); //CTEST
+
         this.litePullMessageThreadPoolNums = litePullMessageThreadPoolNums;
     }
 
     public int getLitePullThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "litePullThreadPoolQueueCapacity"); //CTEST
         return litePullThreadPoolQueueCapacity;
     }
 
     public void setLitePullThreadPoolQueueCapacity(int litePullThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "litePullThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.litePullThreadPoolQueueCapacity = litePullThreadPoolQueueCapacity;
     }
 
     public int getAdminBrokerThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "adminBrokerThreadPoolQueueCapacity"); //CTEST
         return adminBrokerThreadPoolQueueCapacity;
     }
 
     public void setAdminBrokerThreadPoolQueueCapacity(int adminBrokerThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "adminBrokerThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.adminBrokerThreadPoolQueueCapacity = adminBrokerThreadPoolQueueCapacity;
     }
 
     public int getLoadBalanceThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "loadBalanceThreadPoolQueueCapacity"); //CTEST
         return loadBalanceThreadPoolQueueCapacity;
     }
 
     public void setLoadBalanceThreadPoolQueueCapacity(int loadBalanceThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "loadBalanceThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.loadBalanceThreadPoolQueueCapacity = loadBalanceThreadPoolQueueCapacity;
     }
 
     public int getSendHeartbeatTimeoutMillis() {
+        log.warn("[CTEST][GET-PARAM] " + "sendHeartbeatTimeoutMillis"); //CTEST
         return sendHeartbeatTimeoutMillis;
     }
 
     public void setSendHeartbeatTimeoutMillis(int sendHeartbeatTimeoutMillis) {
+        log.warn("[CTEST][SET-PARAM] " + "sendHeartbeatTimeoutMillis" + getStackTrace()); //CTEST
+
         this.sendHeartbeatTimeoutMillis = sendHeartbeatTimeoutMillis;
     }
 
     public long getWaitTimeMillsInLitePullQueue() {
+        log.warn("[CTEST][GET-PARAM] " + "waitTimeMillsInLitePullQueue"); //CTEST
         return waitTimeMillsInLitePullQueue;
     }
 
     public void setWaitTimeMillsInLitePullQueue(long waitTimeMillsInLitePullQueue) {
+        log.warn("[CTEST][SET-PARAM] " + "waitTimeMillsInLitePullQueue" + getStackTrace()); //CTEST
+
         this.waitTimeMillsInLitePullQueue = waitTimeMillsInLitePullQueue;
     }
 
     public boolean isLitePullMessageEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "litePullMessageEnable"); //CTEST
         return litePullMessageEnable;
     }
 
     public void setLitePullMessageEnable(boolean litePullMessageEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "litePullMessageEnable" + getStackTrace()); //CTEST
+
         this.litePullMessageEnable = litePullMessageEnable;
     }
 
     public int getSyncBrokerMemberGroupPeriod() {
+        log.warn("[CTEST][GET-PARAM] " + "syncBrokerMemberGroupPeriod"); //CTEST
         return syncBrokerMemberGroupPeriod;
     }
 
     public void setSyncBrokerMemberGroupPeriod(int syncBrokerMemberGroupPeriod) {
+        log.warn("[CTEST][SET-PARAM] " + "syncBrokerMemberGroupPeriod" + getStackTrace()); //CTEST
+
         this.syncBrokerMemberGroupPeriod = syncBrokerMemberGroupPeriod;
     }
 
     public boolean isRejectTransactionMessage() {
+        log.warn("[CTEST][GET-PARAM] " + "rejectTransactionMessage"); //CTEST
         return rejectTransactionMessage;
     }
 
     public void setRejectTransactionMessage(boolean rejectTransactionMessage) {
+        log.warn("[CTEST][SET-PARAM] " + "rejectTransactionMessage" + getStackTrace()); //CTEST
+
         this.rejectTransactionMessage = rejectTransactionMessage;
     }
 
     public boolean isFetchNamesrvAddrByAddressServer() {
+        log.warn("[CTEST][GET-PARAM] " + "fetchNamesrvAddrByAddressServer"); //CTEST
         return fetchNamesrvAddrByAddressServer;
     }
 
     public void setFetchNamesrvAddrByAddressServer(boolean fetchNamesrvAddrByAddressServer) {
+        log.warn("[CTEST][SET-PARAM] " + "fetchNamesrvAddrByAddressServer" + getStackTrace()); //CTEST
+
         this.fetchNamesrvAddrByAddressServer = fetchNamesrvAddrByAddressServer;
     }
 
     public int getSendThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "sendThreadPoolQueueCapacity"); //CTEST
         return sendThreadPoolQueueCapacity;
     }
 
     public void setSendThreadPoolQueueCapacity(int sendThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "sendThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.sendThreadPoolQueueCapacity = sendThreadPoolQueueCapacity;
     }
 
     public int getPutThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "putThreadPoolQueueCapacity"); //CTEST
         return putThreadPoolQueueCapacity;
     }
 
     public void setPutThreadPoolQueueCapacity(int putThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "putThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.putThreadPoolQueueCapacity = putThreadPoolQueueCapacity;
     }
 
     public int getPullThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "pullThreadPoolQueueCapacity"); //CTEST
         return pullThreadPoolQueueCapacity;
     }
 
     public void setPullThreadPoolQueueCapacity(int pullThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "pullThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.pullThreadPoolQueueCapacity = pullThreadPoolQueueCapacity;
     }
 
     public int getAckThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "ackThreadPoolQueueCapacity"); //CTEST
         return ackThreadPoolQueueCapacity;
     }
 
     public void setAckThreadPoolQueueCapacity(int ackThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "ackThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.ackThreadPoolQueueCapacity = ackThreadPoolQueueCapacity;
     }
 
     public int getReplyThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "replyThreadPoolQueueCapacity"); //CTEST
         return replyThreadPoolQueueCapacity;
     }
 
     public void setReplyThreadPoolQueueCapacity(int replyThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "replyThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.replyThreadPoolQueueCapacity = replyThreadPoolQueueCapacity;
     }
 
     public int getQueryThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "queryThreadPoolQueueCapacity"); //CTEST
         return queryThreadPoolQueueCapacity;
     }
 
     public void setQueryThreadPoolQueueCapacity(final int queryThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "queryThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.queryThreadPoolQueueCapacity = queryThreadPoolQueueCapacity;
     }
 
     public boolean isBrokerTopicEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "brokerTopicEnable"); //CTEST
         return brokerTopicEnable;
     }
 
     public void setBrokerTopicEnable(boolean brokerTopicEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "brokerTopicEnable" + getStackTrace()); //CTEST
+
         this.brokerTopicEnable = brokerTopicEnable;
     }
 
     public int getFilterServerNums() {
+        log.warn("[CTEST][GET-PARAM] " + "filterServerNums"); //CTEST
         return filterServerNums;
     }
 
     public void setFilterServerNums(int filterServerNums) {
+        log.warn("[CTEST][SET-PARAM] " + "filterServerNums" + getStackTrace()); //CTEST
+
         this.filterServerNums = filterServerNums;
     }
 
     public boolean isLongPollingEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "longPollingEnable"); //CTEST
         return longPollingEnable;
     }
 
     public void setLongPollingEnable(boolean longPollingEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "longPollingEnable" + getStackTrace()); //CTEST
+
         this.longPollingEnable = longPollingEnable;
     }
 
     public boolean isNotifyConsumerIdsChangedEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "notifyConsumerIdsChangedEnable"); //CTEST
         return notifyConsumerIdsChangedEnable;
     }
 
     public void setNotifyConsumerIdsChangedEnable(boolean notifyConsumerIdsChangedEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "notifyConsumerIdsChangedEnable" + getStackTrace()); //CTEST
+
         this.notifyConsumerIdsChangedEnable = notifyConsumerIdsChangedEnable;
     }
 
     public long getShortPollingTimeMills() {
+        log.warn("[CTEST][GET-PARAM] " + "shortPollingTimeMills"); //CTEST
         return shortPollingTimeMills;
     }
 
     public void setShortPollingTimeMills(long shortPollingTimeMills) {
+        log.warn("[CTEST][SET-PARAM] " + "shortPollingTimeMills" + getStackTrace()); //CTEST
+
         this.shortPollingTimeMills = shortPollingTimeMills;
     }
 
     public int getClientManageThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "clientManageThreadPoolNums"); //CTEST
         return clientManageThreadPoolNums;
     }
 
     public void setClientManageThreadPoolNums(int clientManageThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "clientManageThreadPoolNums" + getStackTrace()); //CTEST
+
         this.clientManageThreadPoolNums = clientManageThreadPoolNums;
     }
 
     public int getMaxDelayTime() {
+        log.warn("[CTEST][GET-PARAM] " + "maxDelayTime"); //CTEST
         return maxDelayTime;
     }
 
     public void setMaxDelayTime(final int maxDelayTime) {
+        log.warn("[CTEST][SET-PARAM] " + "maxDelayTime" + getStackTrace()); //CTEST
+
         this.maxDelayTime = maxDelayTime;
     }
 
     public int getClientManagerThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "clientManagerThreadPoolQueueCapacity"); //CTEST
         return clientManagerThreadPoolQueueCapacity;
     }
 
     public void setClientManagerThreadPoolQueueCapacity(int clientManagerThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "clientManagerThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.clientManagerThreadPoolQueueCapacity = clientManagerThreadPoolQueueCapacity;
     }
 
     public int getConsumerManagerThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "consumerManagerThreadPoolQueueCapacity"); //CTEST
         return consumerManagerThreadPoolQueueCapacity;
     }
 
     public void setConsumerManagerThreadPoolQueueCapacity(int consumerManagerThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "consumerManagerThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.consumerManagerThreadPoolQueueCapacity = consumerManagerThreadPoolQueueCapacity;
     }
 
     public int getConsumerManageThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "consumerManageThreadPoolNums"); //CTEST
         return consumerManageThreadPoolNums;
     }
 
     public void setConsumerManageThreadPoolNums(int consumerManageThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "consumerManageThreadPoolNums" + getStackTrace()); //CTEST
+
         this.consumerManageThreadPoolNums = consumerManageThreadPoolNums;
     }
 
     public int getCommercialBaseCount() {
+        log.warn("[CTEST][GET-PARAM] " + "commercialBaseCount"); //CTEST
         return commercialBaseCount;
     }
 
     public void setCommercialBaseCount(int commercialBaseCount) {
+        log.warn("[CTEST][SET-PARAM] " + "commercialBaseCount" + getStackTrace()); //CTEST
+
         this.commercialBaseCount = commercialBaseCount;
     }
 
     public boolean isEnableCalcFilterBitMap() {
+        log.warn("[CTEST][GET-PARAM] " + "enableCalcFilterBitMap"); //CTEST
         return enableCalcFilterBitMap;
     }
 
     public void setEnableCalcFilterBitMap(boolean enableCalcFilterBitMap) {
+        log.warn("[CTEST][SET-PARAM] " + "enableCalcFilterBitMap" + getStackTrace()); //CTEST
+
         this.enableCalcFilterBitMap = enableCalcFilterBitMap;
     }
 
     public int getExpectConsumerNumUseFilter() {
+        log.warn("[CTEST][GET-PARAM] " + "expectConsumerNumUseFilter"); //CTEST
         return expectConsumerNumUseFilter;
     }
 
     public void setExpectConsumerNumUseFilter(int expectConsumerNumUseFilter) {
+        log.warn("[CTEST][SET-PARAM] " + "expectConsumerNumUseFilter" + getStackTrace()); //CTEST
+
         this.expectConsumerNumUseFilter = expectConsumerNumUseFilter;
     }
 
     public int getMaxErrorRateOfBloomFilter() {
+        log.warn("[CTEST][GET-PARAM] " + "maxErrorRateOfBloomFilter"); //CTEST
         return maxErrorRateOfBloomFilter;
     }
 
     public void setMaxErrorRateOfBloomFilter(int maxErrorRateOfBloomFilter) {
+        log.warn("[CTEST][SET-PARAM] " + "maxErrorRateOfBloomFilter" + getStackTrace()); //CTEST
+
         this.maxErrorRateOfBloomFilter = maxErrorRateOfBloomFilter;
     }
 
     public long getFilterDataCleanTimeSpan() {
+        log.warn("[CTEST][GET-PARAM] " + "filterDataCleanTimeSpan"); //CTEST
         return filterDataCleanTimeSpan;
     }
 
     public void setFilterDataCleanTimeSpan(long filterDataCleanTimeSpan) {
+        log.warn("[CTEST][SET-PARAM] " + "filterDataCleanTimeSpan" + getStackTrace()); //CTEST
+
         this.filterDataCleanTimeSpan = filterDataCleanTimeSpan;
     }
 
     public boolean isFilterSupportRetry() {
+        log.warn("[CTEST][GET-PARAM] " + "filterSupportRetry"); //CTEST
         return filterSupportRetry;
     }
 
     public void setFilterSupportRetry(boolean filterSupportRetry) {
+        log.warn("[CTEST][SET-PARAM] " + "filterSupportRetry" + getStackTrace()); //CTEST
+
         this.filterSupportRetry = filterSupportRetry;
     }
 
     public boolean isEnablePropertyFilter() {
+        log.warn("[CTEST][GET-PARAM] " + "enablePropertyFilter"); //CTEST
         return enablePropertyFilter;
     }
 
     public void setEnablePropertyFilter(boolean enablePropertyFilter) {
+        log.warn("[CTEST][SET-PARAM] " + "enablePropertyFilter" + getStackTrace()); //CTEST
+
         this.enablePropertyFilter = enablePropertyFilter;
     }
 
     public boolean isCompressedRegister() {
+        log.warn("[CTEST][GET-PARAM] " + "compressedRegister"); //CTEST
         return compressedRegister;
     }
 
     public void setCompressedRegister(boolean compressedRegister) {
+        log.warn("[CTEST][SET-PARAM] " + "compressedRegister" + getStackTrace()); //CTEST
+
         this.compressedRegister = compressedRegister;
     }
 
     public boolean isForceRegister() {
+        log.warn("[CTEST][GET-PARAM] " + "forceRegister"); //CTEST
         return forceRegister;
     }
 
     public void setForceRegister(boolean forceRegister) {
+        log.warn("[CTEST][SET-PARAM] " + "forceRegister" + getStackTrace()); //CTEST
+
         this.forceRegister = forceRegister;
     }
 
     public int getHeartbeatThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "heartbeatThreadPoolQueueCapacity"); //CTEST
         return heartbeatThreadPoolQueueCapacity;
     }
 
     public void setHeartbeatThreadPoolQueueCapacity(int heartbeatThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "heartbeatThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.heartbeatThreadPoolQueueCapacity = heartbeatThreadPoolQueueCapacity;
     }
 
     public int getHeartbeatThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "heartbeatThreadPoolNums"); //CTEST
         return heartbeatThreadPoolNums;
     }
 
     public void setHeartbeatThreadPoolNums(int heartbeatThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "heartbeatThreadPoolNums" + getStackTrace()); //CTEST
+
         this.heartbeatThreadPoolNums = heartbeatThreadPoolNums;
     }
 
     public long getWaitTimeMillsInHeartbeatQueue() {
+        log.warn("[CTEST][GET-PARAM] " + "waitTimeMillsInHeartbeatQueue"); //CTEST
         return waitTimeMillsInHeartbeatQueue;
     }
 
     public void setWaitTimeMillsInHeartbeatQueue(long waitTimeMillsInHeartbeatQueue) {
+        log.warn("[CTEST][SET-PARAM] " + "waitTimeMillsInHeartbeatQueue" + getStackTrace()); //CTEST
+
         this.waitTimeMillsInHeartbeatQueue = waitTimeMillsInHeartbeatQueue;
     }
 
     public int getRegisterNameServerPeriod() {
+        log.warn("[CTEST][GET-PARAM] " + "registerNameServerPeriod"); //CTEST
         return registerNameServerPeriod;
     }
 
     public void setRegisterNameServerPeriod(int registerNameServerPeriod) {
+        log.warn("[CTEST][SET-PARAM] " + "registerNameServerPeriod" + getStackTrace()); //CTEST
+
         this.registerNameServerPeriod = registerNameServerPeriod;
     }
 
     public long getTransactionTimeOut() {
+        log.warn("[CTEST][GET-PARAM] " + "transactionTimeOut"); //CTEST
         return transactionTimeOut;
     }
 
     public void setTransactionTimeOut(long transactionTimeOut) {
+        log.warn("[CTEST][SET-PARAM] " + "transactionTimeOut" + getStackTrace()); //CTEST
+
         this.transactionTimeOut = transactionTimeOut;
     }
 
     public int getTransactionCheckMax() {
+        log.warn("[CTEST][GET-PARAM] " + "transactionCheckMax"); //CTEST
         return transactionCheckMax;
     }
 
     public void setTransactionCheckMax(int transactionCheckMax) {
+        log.warn("[CTEST][SET-PARAM] " + "transactionCheckMax" + getStackTrace()); //CTEST
+
         this.transactionCheckMax = transactionCheckMax;
     }
 
     public long getTransactionCheckInterval() {
+        log.warn("[CTEST][GET-PARAM] " + "transactionCheckInterval"); //CTEST
         return transactionCheckInterval;
     }
 
     public void setTransactionCheckInterval(long transactionCheckInterval) {
+        log.warn("[CTEST][SET-PARAM] " + "transactionCheckInterval" + getStackTrace()); //CTEST
+
         this.transactionCheckInterval = transactionCheckInterval;
     }
 
     public int getEndTransactionThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "endTransactionThreadPoolNums"); //CTEST
         return endTransactionThreadPoolNums;
     }
 
     public void setEndTransactionThreadPoolNums(int endTransactionThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "endTransactionThreadPoolNums" + getStackTrace()); //CTEST
+
         this.endTransactionThreadPoolNums = endTransactionThreadPoolNums;
     }
 
     public int getEndTransactionPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "endTransactionPoolQueueCapacity"); //CTEST
         return endTransactionPoolQueueCapacity;
     }
 
     public void setEndTransactionPoolQueueCapacity(int endTransactionPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "endTransactionPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.endTransactionPoolQueueCapacity = endTransactionPoolQueueCapacity;
     }
 
     public long getWaitTimeMillsInTransactionQueue() {
+        log.warn("[CTEST][GET-PARAM] " + "waitTimeMillsInTransactionQueue"); //CTEST
         return waitTimeMillsInTransactionQueue;
     }
 
     public void setWaitTimeMillsInTransactionQueue(long waitTimeMillsInTransactionQueue) {
+        log.warn("[CTEST][SET-PARAM] " + "waitTimeMillsInTransactionQueue" + getStackTrace()); //CTEST
+
         this.waitTimeMillsInTransactionQueue = waitTimeMillsInTransactionQueue;
     }
 
     public String getMsgTraceTopicName() {
+        log.warn("[CTEST][GET-PARAM] " + "msgTraceTopicName"); //CTEST
         return msgTraceTopicName;
     }
 
     public void setMsgTraceTopicName(String msgTraceTopicName) {
+        log.warn("[CTEST][SET-PARAM] " + "msgTraceTopicName" + getStackTrace()); //CTEST
+
         this.msgTraceTopicName = msgTraceTopicName;
     }
 
     public boolean isTraceTopicEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "traceTopicEnable"); //CTEST
         return traceTopicEnable;
     }
 
     public void setTraceTopicEnable(boolean traceTopicEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "traceTopicEnable" + getStackTrace()); //CTEST
+
         this.traceTopicEnable = traceTopicEnable;
     }
 
     public boolean isAclEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "aclEnable"); //CTEST
         return aclEnable;
     }
 
     public void setAclEnable(boolean aclEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "aclEnable" + getStackTrace()); //CTEST
+
         this.aclEnable = aclEnable;
     }
 
     public boolean isStoreReplyMessageEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "storeReplyMessageEnable"); //CTEST
         return storeReplyMessageEnable;
     }
 
@@ -1069,6 +1355,7 @@ public class BrokerConfig extends BrokerIdentity {
     }
 
     public boolean isEnableDetailStat() {
+        log.warn("[CTEST][GET-PARAM] " + "enableDetailStat"); //CTEST
         return enableDetailStat;
     }
 
@@ -1077,250 +1364,343 @@ public class BrokerConfig extends BrokerIdentity {
     }
 
     public boolean isAutoDeleteUnusedStats() {
+        log.warn("[CTEST][GET-PARAM] " + "autoDeleteUnusedStats"); //CTEST
         return autoDeleteUnusedStats;
     }
 
     public void setAutoDeleteUnusedStats(boolean autoDeleteUnusedStats) {
+        log.warn("[CTEST][SET-PARAM] " + "autoDeleteUnusedStats" + getStackTrace()); //CTEST
+
         this.autoDeleteUnusedStats = autoDeleteUnusedStats;
     }
 
     public long getLoadBalancePollNameServerInterval() {
+        log.warn("[CTEST][GET-PARAM] " + "loadBalancePollNameServerInterval"); //CTEST
         return loadBalancePollNameServerInterval;
     }
 
     public void setLoadBalancePollNameServerInterval(long loadBalancePollNameServerInterval) {
+        log.warn("[CTEST][SET-PARAM] " + "loadBalancePollNameServerInterval" + getStackTrace()); //CTEST
+
         this.loadBalancePollNameServerInterval = loadBalancePollNameServerInterval;
     }
 
     public int getCleanOfflineBrokerInterval() {
+        log.warn("[CTEST][GET-PARAM] " + "cleanOfflineBrokerInterval"); //CTEST
         return cleanOfflineBrokerInterval;
     }
 
     public void setCleanOfflineBrokerInterval(int cleanOfflineBrokerInterval) {
+        log.warn("[CTEST][SET-PARAM] " + "cleanOfflineBrokerInterval" + getStackTrace()); //CTEST
+
         this.cleanOfflineBrokerInterval = cleanOfflineBrokerInterval;
     }
 
     public int getLoadBalanceProcessorThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "loadBalanceProcessorThreadPoolNums"); //CTEST
         return loadBalanceProcessorThreadPoolNums;
     }
 
     public void setLoadBalanceProcessorThreadPoolNums(int loadBalanceProcessorThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "loadBalanceProcessorThreadPoolNums" + getStackTrace()); //CTEST
+
         this.loadBalanceProcessorThreadPoolNums = loadBalanceProcessorThreadPoolNums;
     }
 
     public boolean isServerLoadBalancerEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "serverLoadBalancerEnable"); //CTEST
         return serverLoadBalancerEnable;
     }
 
     public void setServerLoadBalancerEnable(boolean serverLoadBalancerEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "serverLoadBalancerEnable" + getStackTrace()); //CTEST
+
         this.serverLoadBalancerEnable = serverLoadBalancerEnable;
     }
 
     public MessageRequestMode getDefaultMessageRequestMode() {
+        log.warn("[CTEST][GET-PARAM] " + "defaultMessageRequestMode"); //CTEST
         return defaultMessageRequestMode;
     }
 
     public void setDefaultMessageRequestMode(String defaultMessageRequestMode) {
+        log.warn("[CTEST][SET-PARAM] " + "defaultMessageRequestMode" + getStackTrace()); //CTEST
+
         this.defaultMessageRequestMode = MessageRequestMode.valueOf(defaultMessageRequestMode);
     }
 
     public int getDefaultPopShareQueueNum() {
+        log.warn("[CTEST][GET-PARAM] " + "defaultPopShareQueueNum"); //CTEST
         return defaultPopShareQueueNum;
     }
 
     public void setDefaultPopShareQueueNum(int defaultPopShareQueueNum) {
+        log.warn("[CTEST][SET-PARAM] " + "defaultPopShareQueueNum" + getStackTrace()); //CTEST
+
         this.defaultPopShareQueueNum = defaultPopShareQueueNum;
     }
 
     public long getForwardTimeout() {
+        log.warn("[CTEST][GET-PARAM] " + "forwardTimeout"); //CTEST
         return forwardTimeout;
     }
 
     public void setForwardTimeout(long timeout) {
+        log.warn("[CTEST][SET-PARAM] " + "forwardTimeout" + getStackTrace()); //CTEST
+
         this.forwardTimeout = timeout;
     }
 
     public int getBrokerHeartbeatInterval() {
+        log.warn("[CTEST][GET-PARAM] " + "brokerHeartbeatInterval"); //CTEST
         return brokerHeartbeatInterval;
     }
 
     public void setBrokerHeartbeatInterval(int brokerHeartbeatInterval) {
+        log.warn("[CTEST][SET-PARAM] " + "brokerHeartbeatInterval" + getStackTrace()); //CTEST
+
         this.brokerHeartbeatInterval = brokerHeartbeatInterval;
     }
 
     public long getBrokerNotActiveTimeoutMillis() {
+        log.warn("[CTEST][GET-PARAM] " + "brokerNotActiveTimeoutMillis"); //CTEST
         return brokerNotActiveTimeoutMillis;
     }
 
     public void setBrokerNotActiveTimeoutMillis(long brokerNotActiveTimeoutMillis) {
+        log.warn("[CTEST][SET-PARAM] " + "brokerNotActiveTimeoutMillis" + getStackTrace()); //CTEST
+
         this.brokerNotActiveTimeoutMillis = brokerNotActiveTimeoutMillis;
     }
 
     public boolean isEnableNetWorkFlowControl() {
+        log.warn("[CTEST][GET-PARAM] " + "enableNetWorkFlowControl"); //CTEST
         return enableNetWorkFlowControl;
     }
 
     public void setEnableNetWorkFlowControl(boolean enableNetWorkFlowControl) {
+        log.warn("[CTEST][SET-PARAM] " + "enableNetWorkFlowControl" + getStackTrace()); //CTEST
+
         this.enableNetWorkFlowControl = enableNetWorkFlowControl;
     }
 
     public boolean isRealTimeNotifyConsumerChange() {
+        log.warn("[CTEST][GET-PARAM] " + "realTimeNotifyConsumerChange"); //CTEST
         return realTimeNotifyConsumerChange;
     }
 
     public void setRealTimeNotifyConsumerChange(boolean realTimeNotifyConsumerChange) {
+        log.warn("[CTEST][SET-PARAM] " + "realTimeNotifyConsumerChange" + getStackTrace()); //CTEST
+
         this.realTimeNotifyConsumerChange = realTimeNotifyConsumerChange;
     }
 
     public boolean isEnableSlaveActingMaster() {
+        log.warn("[CTEST][GET-PARAM] " + "enableSlaveActingMaster"); //CTEST
         return enableSlaveActingMaster;
     }
 
     public void setEnableSlaveActingMaster(boolean enableSlaveActingMaster) {
+        log.warn("[CTEST][SET-PARAM] " + "enableSlaveActingMaster" + getStackTrace()); //CTEST
+
         this.enableSlaveActingMaster = enableSlaveActingMaster;
     }
 
     public boolean isEnableRemoteEscape() {
+        log.warn("[CTEST][GET-PARAM] " + "enableRemoteEscape"); //CTEST
         return enableRemoteEscape;
     }
 
     public void setEnableRemoteEscape(boolean enableRemoteEscape) {
+        log.warn("[CTEST][SET-PARAM] " + "enableRemoteEscape" + getStackTrace()); //CTEST
+
         this.enableRemoteEscape = enableRemoteEscape;
     }
 
     public boolean isSkipPreOnline() {
+        log.warn("[CTEST][GET-PARAM] " + "skipPreOnline"); //CTEST
         return skipPreOnline;
     }
 
     public void setSkipPreOnline(boolean skipPreOnline) {
+        log.warn("[CTEST][SET-PARAM] " + "skipPreOnline" + getStackTrace()); //CTEST
+
         this.skipPreOnline = skipPreOnline;
     }
 
     public boolean isAsyncSendEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "asyncSendEnable"); //CTEST
         return asyncSendEnable;
     }
 
     public void setAsyncSendEnable(boolean asyncSendEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "asyncSendEnable" + getStackTrace()); //CTEST
+
         this.asyncSendEnable = asyncSendEnable;
     }
 
     public long getConsumerOffsetUpdateVersionStep() {
+        log.warn("[CTEST][GET-PARAM] " + "consumerOffsetUpdateVersionStep"); //CTEST
         return consumerOffsetUpdateVersionStep;
     }
 
     public void setConsumerOffsetUpdateVersionStep(long consumerOffsetUpdateVersionStep) {
+        log.warn("[CTEST][SET-PARAM] " + "consumerOffsetUpdateVersionStep" + getStackTrace()); //CTEST
+
         this.consumerOffsetUpdateVersionStep = consumerOffsetUpdateVersionStep;
     }
 
     public long getDelayOffsetUpdateVersionStep() {
+        log.warn("[CTEST][GET-PARAM] " + "delayOffsetUpdateVersionStep"); //CTEST
         return delayOffsetUpdateVersionStep;
     }
 
     public void setDelayOffsetUpdateVersionStep(long delayOffsetUpdateVersionStep) {
+        log.warn("[CTEST][SET-PARAM] " + "delayOffsetUpdateVersionStep" + getStackTrace()); //CTEST
+
         this.delayOffsetUpdateVersionStep = delayOffsetUpdateVersionStep;
     }
 
     public int getCommercialSizePerMsg() {
+        log.warn("[CTEST][GET-PARAM] " + "commercialSizePerMsg"); //CTEST
         return commercialSizePerMsg;
     }
 
     public void setCommercialSizePerMsg(int commercialSizePerMsg) {
+        log.warn("[CTEST][SET-PARAM] " + "commercialSizePerMsg" + getStackTrace()); //CTEST
+
         this.commercialSizePerMsg = commercialSizePerMsg;
     }
 
     public long getWaitTimeMillsInAckQueue() {
+        log.warn("[CTEST][GET-PARAM] " + "waitTimeMillsInAckQueue"); //CTEST
         return waitTimeMillsInAckQueue;
     }
 
     public void setWaitTimeMillsInAckQueue(long waitTimeMillsInAckQueue) {
+        log.warn("[CTEST][SET-PARAM] " + "waitTimeMillsInAckQueue" + getStackTrace()); //CTEST
+
         this.waitTimeMillsInAckQueue = waitTimeMillsInAckQueue;
     }
 
     public boolean isRejectPullConsumerEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "rejectPullConsumerEnable"); //CTEST
         return rejectPullConsumerEnable;
     }
 
     public void setRejectPullConsumerEnable(boolean rejectPullConsumerEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "rejectPullConsumerEnable" + getStackTrace()); //CTEST
+
         this.rejectPullConsumerEnable = rejectPullConsumerEnable;
     }
 
     public boolean isAccountStatsEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "accountStatsEnable"); //CTEST
         return accountStatsEnable;
     }
 
     public void setAccountStatsEnable(boolean accountStatsEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "accountStatsEnable" + getStackTrace()); //CTEST
+
         this.accountStatsEnable = accountStatsEnable;
     }
 
     public boolean isAccountStatsPrintZeroValues() {
+        log.warn("[CTEST][GET-PARAM] " + "accountStatsPrintZeroValues"); //CTEST
         return accountStatsPrintZeroValues;
     }
 
     public void setAccountStatsPrintZeroValues(boolean accountStatsPrintZeroValues) {
+        log.warn("[CTEST][SET-PARAM] " + "accountStatsPrintZeroValues" + getStackTrace()); //CTEST
+
         this.accountStatsPrintZeroValues = accountStatsPrintZeroValues;
     }
 
     public boolean isLockInStrictMode() {
+        log.warn("[CTEST][GET-PARAM] " + "lockInStrictMode"); //CTEST
         return lockInStrictMode;
     }
 
     public void setLockInStrictMode(boolean lockInStrictMode) {
+        log.warn("[CTEST][SET-PARAM] " + "lockInStrictMode" + getStackTrace()); //CTEST
+
         this.lockInStrictMode = lockInStrictMode;
     }
 
     public boolean isIsolateLogEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "isolateLogEnable"); //CTEST
         return isolateLogEnable;
     }
 
     public void setIsolateLogEnable(boolean isolateLogEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "isolateLogEnable" + getStackTrace()); //CTEST
+
         this.isolateLogEnable = isolateLogEnable;
     }
 
     public boolean isCompatibleWithOldNameSrv() {
+        log.warn("[CTEST][GET-PARAM] " + "compatibleWithOldNameSrv"); //CTEST
         return compatibleWithOldNameSrv;
     }
 
     public void setCompatibleWithOldNameSrv(boolean compatibleWithOldNameSrv) {
+        log.warn("[CTEST][SET-PARAM] " + "compatibleWithOldNameSrv" + getStackTrace()); //CTEST
+
         this.compatibleWithOldNameSrv = compatibleWithOldNameSrv;
     }
 
     public boolean isEnableControllerMode() {
+        log.warn("[CTEST][GET-PARAM] " + "enableControllerMode"); //CTEST
         return enableControllerMode;
     }
 
     public void setEnableControllerMode(boolean enableControllerMode) {
+        log.warn("[CTEST][SET-PARAM] " + "enableControllerMode" + getStackTrace()); //CTEST
+
         this.enableControllerMode = enableControllerMode;
     }
 
     public String getControllerAddr() {
+        log.warn("[CTEST][GET-PARAM] " + "controllerAddr"); //CTEST
         return controllerAddr;
     }
 
     public void setControllerAddr(String controllerAddr) {
+        log.warn("[CTEST][SET-PARAM] " + "controllerAddr" + getStackTrace()); //CTEST
+
         this.controllerAddr = controllerAddr;
     }
 
     public long getSyncBrokerMetadataPeriod() {
+        log.warn("[CTEST][GET-PARAM] " + "syncBrokerMetadataPeriod"); //CTEST
         return syncBrokerMetadataPeriod;
     }
 
     public void setSyncBrokerMetadataPeriod(long syncBrokerMetadataPeriod) {
+        log.warn("[CTEST][SET-PARAM] " + "syncBrokerMetadataPeriod" + getStackTrace()); //CTEST
+
         this.syncBrokerMetadataPeriod = syncBrokerMetadataPeriod;
     }
 
     public long getCheckSyncStateSetPeriod() {
+        log.warn("[CTEST][GET-PARAM] " + "checkSyncStateSetPeriod"); //CTEST
         return checkSyncStateSetPeriod;
     }
 
     public void setCheckSyncStateSetPeriod(long checkSyncStateSetPeriod) {
+        log.warn("[CTEST][SET-PARAM] " + "checkSyncStateSetPeriod" + getStackTrace()); //CTEST
+
         this.checkSyncStateSetPeriod = checkSyncStateSetPeriod;
     }
 
     public long getSyncControllerMetadataPeriod() {
+        log.warn("[CTEST][GET-PARAM] " + "syncControllerMetadataPeriod"); //CTEST
         return syncControllerMetadataPeriod;
     }
 
     public void setSyncControllerMetadataPeriod(long syncControllerMetadataPeriod) {
+        log.warn("[CTEST][SET-PARAM] " + "syncControllerMetadataPeriod" + getStackTrace()); //CTEST
+
         this.syncControllerMetadataPeriod = syncControllerMetadataPeriod;
     }
 }

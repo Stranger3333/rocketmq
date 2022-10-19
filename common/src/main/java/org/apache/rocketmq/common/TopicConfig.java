@@ -24,10 +24,16 @@ import java.util.Map;
 import java.util.Objects;
 import org.apache.rocketmq.common.attribute.TopicMessageType;
 import org.apache.rocketmq.common.constant.PermName;
+import org.apache.rocketmq.logging.InternalLogger;
+import org.apache.rocketmq.logging.InternalLoggerFactory;
+import org.apache.rocketmq.common.constant.LoggerName;
 
 import static org.apache.rocketmq.common.TopicAttributes.TOPIC_MESSAGE_TYPE_ATTRIBUTE;
 
 public class TopicConfig {
+    // ctest addition
+    private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.COMMON_LOGGER_NAME);
+
     private static final String SEPARATOR = " ";
     public static int defaultReadQueueNums = 16;
     public static int defaultWriteQueueNums = 16;
@@ -133,68 +139,108 @@ public class TopicConfig {
 
         return false;
     }
+    // ctest addition 
+    private String getStackTrace() {
+        String stacktrace = " ";
+        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+          stacktrace = stacktrace.concat(element.getClassName() + "\t");
+        }
+        return stacktrace;
+    }
 
     public String getTopicName() {
+        log.warn("[CTEST][GET-PARAM] " + "topicName"); //CTEST
+
         return topicName;
     }
 
     public void setTopicName(String topicName) {
+        log.warn("[CTEST][SET-PARAM] " + "topicName" + getStackTrace()); //CTEST
+
         this.topicName = topicName;
     }
 
     public int getReadQueueNums() {
+        log.warn("[CTEST][GET-PARAM] " + "readQueueNums"); //CTEST
+
         return readQueueNums;
     }
 
     public void setReadQueueNums(int readQueueNums) {
+        log.warn("[CTEST][SET-PARAM] " + "readQueueNums" + getStackTrace()); //CTEST
+
         this.readQueueNums = readQueueNums;
     }
 
     public int getWriteQueueNums() {
+        log.warn("[CTEST][GET-PARAM] " + "writeQueueNums"); //CTEST
+
         return writeQueueNums;
     }
 
     public void setWriteQueueNums(int writeQueueNums) {
+        log.warn("[CTEST][SET-PARAM] " + "writeQueueNums" + getStackTrace()); //CTEST
+
         this.writeQueueNums = writeQueueNums;
     }
 
     public int getPerm() {
+        log.warn("[CTEST][GET-PARAM] " + "perm"); //CTEST
+
         return perm;
     }
 
     public void setPerm(int perm) {
+        log.warn("[CTEST][SET-PARAM] " + "perm" + getStackTrace()); //CTEST
+
         this.perm = perm;
     }
 
     public TopicFilterType getTopicFilterType() {
+        log.warn("[CTEST][GET-PARAM] " + "topicFilterType"); //CTEST
+
         return topicFilterType;
     }
 
     public void setTopicFilterType(TopicFilterType topicFilterType) {
+        log.warn("[CTEST][SET-PARAM] " + "topicFilterType" + getStackTrace()); //CTEST
+
         this.topicFilterType = topicFilterType;
     }
 
     public int getTopicSysFlag() {
+        log.warn("[CTEST][GET-PARAM] " + "topicSysFlag"); //CTEST
+
         return topicSysFlag;
     }
 
     public void setTopicSysFlag(int topicSysFlag) {
+        log.warn("[CTEST][SET-PARAM] " + "topicSysFlag" + getStackTrace()); //CTEST
+
         this.topicSysFlag = topicSysFlag;
     }
 
     public boolean isOrder() {
+        log.warn("[CTEST][GET-PARAM] " + "order"); //CTEST
+
         return order;
     }
 
     public void setOrder(boolean isOrder) {
+        log.warn("[CTEST][SET-PARAM] " + "order" + getStackTrace()); //CTEST
+
         this.order = isOrder;
     }
 
     public Map<String, String> getAttributes() {
+        log.warn("[CTEST][GET-PARAM] " + "attributes"); //CTEST
+
         return attributes;
     }
 
     public void setAttributes(Map<String, String> attributes) {
+        log.warn("[CTEST][SET-PARAM] " + "attributes" + getStackTrace()); //CTEST
+
         this.attributes = attributes;
     }
 

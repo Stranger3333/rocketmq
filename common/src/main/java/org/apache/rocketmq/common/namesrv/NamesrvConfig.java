@@ -22,8 +22,12 @@ package org.apache.rocketmq.common.namesrv;
 
 import java.io.File;
 import org.apache.rocketmq.common.MixAll;
+import org.apache.rocketmq.logging.InternalLogger;
+import org.apache.rocketmq.logging.InternalLoggerFactory;
+import org.apache.rocketmq.common.constant.LoggerName;
 
 public class NamesrvConfig {
+    private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.COMMON_LOGGER_NAME);
 
     private String rocketmqHome = System.getProperty(MixAll.ROCKETMQ_HOME_PROPERTY, System.getenv(MixAll.ROCKETMQ_HOME_ENV));
     private String kvConfigPath = System.getProperty("user.home") + File.separator + "namesrv" + File.separator + "kvConfig.json";
@@ -78,148 +82,226 @@ public class NamesrvConfig {
      */
     private boolean enableControllerInNamesrv = false;
 
-
+    private String getStackTrace() {
+        String stacktrace = " ";
+        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+          stacktrace = stacktrace.concat(element.getClassName() + "\t");
+        }
+        return stacktrace;
+    }
+    
     public boolean isOrderMessageEnable() {
+        log.warn("[CTEST][GET-PARAM] " + "orderMessageEnable"); //CTEST
+
         return orderMessageEnable;
     }
 
     public void setOrderMessageEnable(boolean orderMessageEnable) {
+        log.warn("[CTEST][SET-PARAM] " + "orderMessageEnable" + getStackTrace()); //CTEST
+
         this.orderMessageEnable = orderMessageEnable;
     }
 
     public String getRocketmqHome() {
+        log.warn("[CTEST][GET-PARAM] " + "rocketmqHome"); //CTEST
+
         return rocketmqHome;
     }
 
     public void setRocketmqHome(String rocketmqHome) {
+        log.warn("[CTEST][SET-PARAM] " + "rocketmqHome" + getStackTrace()); //CTEST
+
         this.rocketmqHome = rocketmqHome;
     }
 
     public String getKvConfigPath() {
+        log.warn("[CTEST][GET-PARAM] " + "kvConfigPath"); //CTEST
+
         return kvConfigPath;
     }
 
     public void setKvConfigPath(String kvConfigPath) {
+        log.warn("[CTEST][SET-PARAM] " + "kvConfigPath" + getStackTrace()); //CTEST
+
         this.kvConfigPath = kvConfigPath;
     }
 
     public String getProductEnvName() {
+        log.warn("[CTEST][GET-PARAM] " + "productEnvName"); //CTEST
+
         return productEnvName;
     }
 
     public void setProductEnvName(String productEnvName) {
+        log.warn("[CTEST][SET-PARAM] " + "productEnvName" + getStackTrace()); //CTEST
         this.productEnvName = productEnvName;
     }
 
     public boolean isClusterTest() {
+        log.warn("[CTEST][GET-PARAM] " + "clusterTest"); //CTEST
+
         return clusterTest;
     }
 
     public void setClusterTest(boolean clusterTest) {
+        log.warn("[CTEST][SET-PARAM] " + "clusterTest" + getStackTrace()); //CTEST
+
         this.clusterTest = clusterTest;
     }
 
     public String getConfigStorePath() {
+        log.warn("[CTEST][GET-PARAM] " + "configStorePath"); //CTEST
+
         return configStorePath;
     }
 
     public void setConfigStorePath(final String configStorePath) {
+        log.warn("[CTEST][SET-PARAM] " + "configStorePath" + getStackTrace()); //CTEST
+
         this.configStorePath = configStorePath;
     }
 
     public boolean isReturnOrderTopicConfigToBroker() {
+        log.warn("[CTEST][GET-PARAM] " + "returnOrderTopicConfigToBroker"); //CTEST
+
         return returnOrderTopicConfigToBroker;
     }
 
     public void setReturnOrderTopicConfigToBroker(boolean returnOrderTopicConfigToBroker) {
+        log.warn("[CTEST][SET-PARAM] " + "returnOrderTopicConfigToBroker" + getStackTrace()); //CTEST
+
         this.returnOrderTopicConfigToBroker = returnOrderTopicConfigToBroker;
     }
 
     public int getClientRequestThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "clientRequestThreadPoolNums"); //CTEST
+
         return clientRequestThreadPoolNums;
     }
 
     public void setClientRequestThreadPoolNums(final int clientRequestThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "clientRequestThreadPoolNums" + getStackTrace()); //CTEST
+
         this.clientRequestThreadPoolNums = clientRequestThreadPoolNums;
     }
 
     public int getDefaultThreadPoolNums() {
+        log.warn("[CTEST][GET-PARAM] " + "defaultThreadPoolNums"); //CTEST
+
         return defaultThreadPoolNums;
     }
 
     public void setDefaultThreadPoolNums(final int defaultThreadPoolNums) {
+        log.warn("[CTEST][SET-PARAM] " + "defaultThreadPoolNums" + getStackTrace()); //CTEST
+
         this.defaultThreadPoolNums = defaultThreadPoolNums;
     }
 
     public int getClientRequestThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "clientRequestThreadPoolQueueCapacity"); //CTEST
+
         return clientRequestThreadPoolQueueCapacity;
     }
 
     public void setClientRequestThreadPoolQueueCapacity(final int clientRequestThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "clientRequestThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.clientRequestThreadPoolQueueCapacity = clientRequestThreadPoolQueueCapacity;
     }
 
     public int getDefaultThreadPoolQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "defaultThreadPoolQueueCapacity"); //CTEST
+
         return defaultThreadPoolQueueCapacity;
     }
 
     public void setDefaultThreadPoolQueueCapacity(final int defaultThreadPoolQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "defaultThreadPoolQueueCapacity" + getStackTrace()); //CTEST
+
         this.defaultThreadPoolQueueCapacity = defaultThreadPoolQueueCapacity;
     }
 
     public long getScanNotActiveBrokerInterval() {
+        log.warn("[CTEST][GET-PARAM] " + "scanNotActiveBrokerInterval"); //CTEST
+
         return scanNotActiveBrokerInterval;
     }
 
     public void setScanNotActiveBrokerInterval(long scanNotActiveBrokerInterval) {
+        log.warn("[CTEST][SET-PARAM] " + "scanNotActiveBrokerInterval" + getStackTrace()); //CTEST
+
         this.scanNotActiveBrokerInterval = scanNotActiveBrokerInterval;
     }
 
     public int getUnRegisterBrokerQueueCapacity() {
+        log.warn("[CTEST][GET-PARAM] " + "unRegisterBrokerQueueCapacity"); //CTEST
+
         return unRegisterBrokerQueueCapacity;
     }
 
     public void setUnRegisterBrokerQueueCapacity(final int unRegisterBrokerQueueCapacity) {
+        log.warn("[CTEST][SET-PARAM] " + "unRegisterBrokerQueueCapacity" + getStackTrace()); //CTEST
+
         this.unRegisterBrokerQueueCapacity = unRegisterBrokerQueueCapacity;
     }
 
     public boolean isSupportActingMaster() {
+        log.warn("[CTEST][GET-PARAM] " + "supportActingMaster"); //CTEST
+
         return supportActingMaster;
     }
 
     public void setSupportActingMaster(final boolean supportActingMaster) {
+        log.warn("[CTEST][SET-PARAM] " + "supportActingMaster" + getStackTrace()); //CTEST
+
         this.supportActingMaster = supportActingMaster;
     }
 
     public boolean isEnableAllTopicList() {
+        log.warn("[CTEST][GET-PARAM] " + "enableAllTopicList"); //CTEST
+
         return enableAllTopicList;
     }
 
     public void setEnableAllTopicList(boolean enableAllTopicList) {
+        log.warn("[CTEST][SET-PARAM] " + "enableAllTopicList" + getStackTrace()); //CTEST
+
         this.enableAllTopicList = enableAllTopicList;
     }
 
     public boolean isEnableTopicList() {
+        log.warn("[CTEST][GET-PARAM] " + "enableTopicList"); //CTEST
+
         return enableTopicList;
     }
 
     public void setEnableTopicList(boolean enableTopicList) {
+        log.warn("[CTEST][SET-PARAM] " + "enableTopicList" + getStackTrace()); //CTEST
+
         this.enableTopicList = enableTopicList;
     }
 
     public boolean isNotifyMinBrokerIdChanged() {
+        log.warn("[CTEST][GET-PARAM] " + "notifyMinBrokerIdChanged"); //CTEST
+
         return notifyMinBrokerIdChanged;
     }
 
     public void setNotifyMinBrokerIdChanged(boolean notifyMinBrokerIdChanged) {
+        log.warn("[CTEST][SET-PARAM] " + "notifyMinBrokerIdChanged" + getStackTrace()); //CTEST
+
         this.notifyMinBrokerIdChanged = notifyMinBrokerIdChanged;
     }
 
     public boolean isEnableControllerInNamesrv() {
+        log.warn("[CTEST][GET-PARAM] " + "enableControllerInNamesrv"); //CTEST
+
         return enableControllerInNamesrv;
     }
 
     public void setEnableControllerInNamesrv(boolean enableControllerInNamesrv) {
+        log.warn("[CTEST][SET-PARAM] " + "enableControllerInNamesrv" + getStackTrace()); //CTEST
+
         this.enableControllerInNamesrv = enableControllerInNamesrv;
     }
 }
