@@ -311,7 +311,7 @@ public class BrokerConfig extends BrokerIdentity {
     private String getStackTrace() {
         String stacktrace = " ";
         for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
-          stacktrace = stacktrace.concat(element.getClassName() + "\t");
+            stacktrace = stacktrace.concat(element.getClassName() + "\t");
         }
         return stacktrace;
     }
