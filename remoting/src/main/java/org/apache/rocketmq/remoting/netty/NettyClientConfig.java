@@ -47,6 +47,8 @@ public class NettyClientConfig {
     private boolean disableNettyWorkerGroup = false;
 
     public boolean isClientCloseSocketIfTimeout() {
+        log.warn("[CTEST][GET-PARAM] " + "clientCloseSocketIfTimeoutv"); //CTEST
+
         return clientCloseSocketIfTimeout;
     }
 
@@ -55,6 +57,8 @@ public class NettyClientConfig {
     }
 
     public int getClientWorkerThreads() {
+        log.warn("[CTEST][GET-PARAM] " + "clientWorkerThreads"); //CTEST
+
         return clientWorkerThreads;
     }
 
@@ -63,6 +67,8 @@ public class NettyClientConfig {
     }
 
     public int getClientOnewaySemaphoreValue() {
+        log.warn("[CTEST][GET-PARAM] " + "clientOnewaySemaphoreValue"); //CTEST
+
         return clientOnewaySemaphoreValue;
     }
 
@@ -71,6 +77,8 @@ public class NettyClientConfig {
     }
 
     public int getConnectTimeoutMillis() {
+        log.warn("[CTEST][GET-PARAM] " + "connectTimeoutMillis"); //CTEST
+
         return connectTimeoutMillis;
     }
 
@@ -79,10 +87,13 @@ public class NettyClientConfig {
     }
 
     public int getClientCallbackExecutorThreads() {
+        log.warn("[CTEST][GET-PARAM] " + "clientCallbackExecutorThreads"); //CTEST
+
         return clientCallbackExecutorThreads;
     }
 
     public void setClientCallbackExecutorThreads(int clientCallbackExecutorThreads) {
+        
         this.clientCallbackExecutorThreads = clientCallbackExecutorThreads;
     }
 

@@ -15,10 +15,16 @@
  * limitations under the License.
  */
 package org.apache.rocketmq.common;
+// ADDED
+import org.apache.rocketmq.logging.InternalLogger;
+import org.apache.rocketmq.logging.InternalLoggerFactory;
+import org.apache.rocketmq.common.constant.LoggerName;
 
 import java.util.List;
 
 public class PlainAccessConfig {
+    // added
+    private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.COMMON_LOGGER_NAME);
 
     private String accessKey;
 
@@ -36,67 +42,107 @@ public class PlainAccessConfig {
 
     private List<String> groupPerms;
 
+    // ctest addition 
+    private String getStackTrace() {
+        String stacktrace = " ";
+        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+            stacktrace = stacktrace.concat(element.getClassName() + "\t");
+        }
+        return stacktrace;
+    }
+
     public String getAccessKey() {
+        log.warn("[CTEST][GET-PARAM] " + "accessKey"); //CTEST
+
         return accessKey;
     }
 
     public void setAccessKey(String accessKey) {
+        log.warn("[CTEST][SET-PARAM] " + "accessKey" + getStackTrace()); //CTEST
+
         this.accessKey = accessKey;
     }
 
     public String getSecretKey() {
+        log.warn("[CTEST][GET-PARAM] " + "secretKey"); //CTEST
+
         return secretKey;
     }
 
     public void setSecretKey(String secretKey) {
+        log.warn("[CTEST][SET-PARAM] " + "secretKey" + getStackTrace()); //CTEST
+
         this.secretKey = secretKey;
     }
 
     public String getWhiteRemoteAddress() {
+        log.warn("[CTEST][GET-PARAM] " + "whiteRemoteAddress"); //CTEST
+
         return whiteRemoteAddress;
     }
 
     public void setWhiteRemoteAddress(String whiteRemoteAddress) {
+        log.warn("[CTEST][SET-PARAM] " + "whiteRemoteAddress" + getStackTrace()); //CTEST
+
         this.whiteRemoteAddress = whiteRemoteAddress;
     }
 
     public boolean isAdmin() {
+        log.warn("[CTEST][GET-PARAM] " + "admin"); //CTEST
+
         return admin;
     }
 
     public void setAdmin(boolean admin) {
+        log.warn("[CTEST][SET-PARAM] " + "admin" + getStackTrace()); //CTEST
+
         this.admin = admin;
     }
 
     public String getDefaultTopicPerm() {
+        log.warn("[CTEST][GET-PARAM] " + "defaultTopicPerm"); //CTEST
+
         return defaultTopicPerm;
     }
 
     public void setDefaultTopicPerm(String defaultTopicPerm) {
+        log.warn("[CTEST][SET-PARAM] " + "defaultTopicPerm" + getStackTrace()); //CTEST
+
         this.defaultTopicPerm = defaultTopicPerm;
     }
 
     public String getDefaultGroupPerm() {
+        log.warn("[CTEST][GET-PARAM] " + "defaultGroupPerm"); //CTEST
+
         return defaultGroupPerm;
     }
 
     public void setDefaultGroupPerm(String defaultGroupPerm) {
+        log.warn("[CTEST][SET-PARAM] " + "defaultGroupPerm" + getStackTrace()); //CTEST
+
         this.defaultGroupPerm = defaultGroupPerm;
     }
 
     public List<String> getTopicPerms() {
+        log.warn("[CTEST][GET-PARAM] " + "topicPerms"); //CTEST
         return topicPerms;
     }
 
     public void setTopicPerms(List<String> topicPerms) {
+        log.warn("[CTEST][SET-PARAM] " + "topicPerms" + getStackTrace()); //CTEST
+
         this.topicPerms = topicPerms;
     }
 
     public List<String> getGroupPerms() {
+        log.warn("[CTEST][GET-PARAM] " + "groupPerms"); //CTEST
+
         return groupPerms;
     }
 
     public void setGroupPerms(List<String> groupPerms) {
+        log.warn("[CTEST][SET-PARAM] " + "groupPerms" + getStackTrace()); //CTEST
+
         this.groupPerms = groupPerms;
     }
 

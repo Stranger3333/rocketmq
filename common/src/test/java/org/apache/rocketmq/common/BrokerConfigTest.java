@@ -45,5 +45,7 @@ public class BrokerConfigTest {
         assertThat(brokerConfig.getBrokerName()).isEqualTo("broker-a");
         assertThat(brokerConfig.isAutoCreateTopicEnable()).isEqualTo(false);
         assertThat(brokerConfig.isAutoDeleteUnusedStats()).isEqualTo(true);
+        // test for log
+        System.out.println("hello world");
     }
 }
