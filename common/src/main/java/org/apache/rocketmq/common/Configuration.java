@@ -65,6 +65,7 @@ public class Configuration {
     public Configuration(InternalLogger log, String storePath, Object... configObjects) {
         this(log, configObjects);
         this.storePath = storePath;
+        log.warn("Config store path: "+storePath);
     }
 
     /**
@@ -294,7 +295,7 @@ public class Configuration {
         {
             stringBuilder.append(MixAll.properties2String(this.allConfigs, true));
         }
-        log.warn("[CTEST][SET-PARAM] " + stringBuilder.toString());
+        log.warn("Internal Configs: "+stringBuilder.toString());
         return stringBuilder.toString();
     }
 
@@ -359,12 +360,6 @@ public class Configuration {
         }
     }
     // attempted addition to get CONF Parameters
-    private String getStackTrace() {
-        String stacktrace = " ";
-        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
-            stacktrace = stacktrace.concat(element.getClassName() + "\t");
-        }
-        return stacktrace;
-    }
+    
 
 }

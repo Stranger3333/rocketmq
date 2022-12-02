@@ -45,7 +45,6 @@ public class AclUtils {
                     sb.append(entry.getValue());
                 }
             }
-
             return AclUtils.combineBytes(sb.toString().getBytes(CHARSET), request.getBody());
         } catch (Exception e) {
             throw new RuntimeException("Incompatible exception.", e);
@@ -235,7 +234,10 @@ public class AclUtils {
     }
 
     public static <T> T getYamlDataObject(String path, Class<T> clazz) {
+        // added for ctest
+        log.info("reading configuration from: " + path);
         try (FileInputStream fis = new FileInputStream(path)) {
+            
             return getYamlDataObject(fis, clazz);
         } catch (FileNotFoundException ignore) {
             return null;
@@ -303,5 +305,31 @@ public class AclUtils {
         }
         return new AclClientRPCHook(new SessionCredentials(accessKey, secretKey));
     }
+    // added for ctest
+    // use zookeeper as reference
+    private static boolean isFirstThread = true;
+    private synchronized boolean isFirstThreadAndFlip() {
+        boolean tmp = isFirstThread;
+        isFirstThread = false;
+        return tmp;
+    }
+
+    // private void injectError(boolean inj_env_param) throws ConfigException {
+    //     String injectionFile = "ctest.cfg";
+    //     try {
+    //         Properties cfg = new Properties();
+    //         FileInputStream in = new FileInputStream(injectionFile);
+    //         try {
+    //             cfg.load(in);
+    //         } finally {
+    //             in.close();
+    //         }
+    //         parseProperties(cfg, true, inj_env_param, false);
+    //     } catch (IOException e) {
+    //         throw new ConfigException("[CTEST] Error injecting from " + injectionFile, e);
+    //     } catch (IllegalArgumentException e) {
+    //         throw new ConfigException("[CTEST] Error injecting from " + injectionFile, e);
+    //     }
+    // }
 
 }

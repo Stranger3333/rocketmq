@@ -1,0 +1,7 @@
+dataVersion:
+- counter: 5
+  timestamp: 1668371424196
+accounts:
+- accessKey: updateAccessConfig
+  secretKey: '123456789111'
+  admin: true

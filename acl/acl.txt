@@ -1,0 +1,87 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36morg.apache.rocketmq:rocketmq-acl[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding rocketmq-acl 5.0.0 5.0.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-ban-circular-dependencies)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-checkstyle-plugin:3.2.0:check[m [1m(validate)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] Starting audit...
+Audit done.
+[[1;34mINFO[m] You have 0 Checkstyle violations.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.5:prepare-agent[m [1m(default-prepare-agent)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] argLine set to -javaagent:/home/siruiw4/.m2/repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar=destfile=/home/siruiw4/rocketmq/acl/target/jacoco.exec
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-resource-bundles)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/siruiw4/rocketmq/acl/src/main/resources
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.5.1:compile[m [1m(default-compile)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspotbugs-maven-plugin:4.2.2:check[m [1m(check)[0;1m > [0;1m:spotbugs[m @ [36mrocketmq-acl[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspotbugs-maven-plugin:4.2.2:spotbugs[m [1m(spotbugs)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] Fork Value is false
+     [java] JVM args ignored when same JVM is used.
+[[1;34mINFO[m] Done SpotBugs Analysis....
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspotbugs-maven-plugin:4.2.2:check[m [1m(check)[0;1m < [0;1m:spotbugs[m @ [36mrocketmq-acl[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspotbugs-maven-plugin:4.2.2:check[m [1m(check)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] BugInstance size is 0
+[[1;34mINFO[m] Error size is 0
+[[1;34mINFO[m] No errors/warnings found
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 18 resources
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.5.1:testCompile[m [1m(default-testCompile)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.apache.rocketmq.acl.common.[1mAclSignerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.43 s - in org.apache.rocketmq.acl.common.[1mAclSignerTest[m
+[[1;34mINFO[m] Running org.apache.rocketmq.acl.common.[1mAclUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m15[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.363 s - in org.apache.rocketmq.acl.common.[1mAclUtilsTest[m
+[[1;34mINFO[m] Running org.apache.rocketmq.acl.common.[1mSessionCredentialsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s - in org.apache.rocketmq.acl.common.[1mSessionCredentialsTest[m
+[[1;34mINFO[m] Running org.apache.rocketmq.acl.common.[1mPermissionTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in org.apache.rocketmq.acl.common.[1mPermissionTest[m
+[[1;34mINFO[m] Running org.apache.rocketmq.acl.common.[1mAclClientRPCHookTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.266 s - in org.apache.rocketmq.acl.common.[1mAclClientRPCHookTest[m
+[[1;34mINFO[m] Running org.apache.rocketmq.acl.plain.[1mPlainPermissionManagerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m19[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.885 s - in org.apache.rocketmq.acl.plain.[1mPlainPermissionManagerTest[m
+[[1;34mINFO[m] Running org.apache.rocketmq.acl.plain.[1mRemoteAddressStrategyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.512 s - in org.apache.rocketmq.acl.plain.[1mRemoteAddressStrategyTest[m
+[[1;34mINFO[m] Running org.apache.rocketmq.acl.plain.[1mPlainAccessValidatorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m34[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 65.092 s - in org.apache.rocketmq.acl.plain.[1mPlainAccessValidatorTest[m
+[[1;34mINFO[m] Running org.apache.rocketmq.acl.plain.[1mPlainAccessControlFlowTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.415 s - in org.apache.rocketmq.acl.plain.[1mPlainAccessControlFlowTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 101, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.5:report[m [1m(report)[m @ [36mrocketmq-acl[0;1m ---[m
+[[1;34mINFO[m] Loading execution data file /home/siruiw4/rocketmq/acl/target/jacoco.exec
+[[1;34mINFO[m] Analyzed bundle 'rocketmq-acl 5.0.0' with 22 classes
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  01:39 min
+[[1;34mINFO[m] Finished at: 2022-11-13T01:48:29-06:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
