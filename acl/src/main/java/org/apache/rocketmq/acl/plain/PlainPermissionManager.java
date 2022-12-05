@@ -86,8 +86,12 @@ public class PlainPermissionManager {
 
     public PlainPermissionManager() {
         this.defaultAclDir = MixAll.dealFilePath(fileHome + File.separator + "conf" + File.separator + "acl");
-        this.defaultAclFile = MixAll.dealFilePath(fileHome + File.separator + System.getProperty("rocketmq.acl.plain.file", "conf/plain_acl.yml"));
+        log.info("default acl dir: " + defaultAclDir);
+        // this.defaultAclFile = MixAll.dealFilePath(fileHome + File.separator + System.getProperty("rocketmq.acl.plain.file", "conf/plain_acl.yml"));
+        this.defaultAclFile = MixAll.dealFilePath(fileHome + File.separator + System.getProperty("rocketmq.acl.plain.file", "conf/ctest.yml"));
+        log.info("default acl file: " + defaultAclFile);
         load();
+        // load(ctest);
         watch();
     }
 
@@ -130,6 +134,8 @@ public class PlainPermissionManager {
         if (new File(defaultAclFile).exists() && !fileList.contains(defaultAclFile)) {
             fileList.add(defaultAclFile);
         }
+        // ctest debugging printout
+        log.info("file list size: " + fileList.size());
 
         for (int i = 0; i < fileList.size(); i++) {
             final String currentFile = MixAll.dealFilePath(fileList.get(i));
@@ -143,6 +149,7 @@ public class PlainPermissionManager {
 
             List<RemoteAddressStrategy> globalWhiteRemoteAddressStrategyList = new ArrayList<>();
             JSONArray globalWhiteRemoteAddressesList = plainAclConfData.getJSONArray("globalWhiteRemoteAddresses");
+            log.warn("ctest global white remote addr" + globalWhiteRemoteAddressesList.toString());
             if (globalWhiteRemoteAddressesList != null && !globalWhiteRemoteAddressesList.isEmpty()) {
                 for (int j = 0; j < globalWhiteRemoteAddressesList.size(); j++) {
                     globalWhiteRemoteAddressStrategyList.add(remoteAddressStrategyFactory.

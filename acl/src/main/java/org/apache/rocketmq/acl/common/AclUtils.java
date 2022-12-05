@@ -235,9 +235,9 @@ public class AclUtils {
 
     public static <T> T getYamlDataObject(String path, Class<T> clazz) {
         // added for ctest
-        log.info("reading configuration from: " + path);
+        log.info("reading configuration ctest from: " + path);
         try (FileInputStream fis = new FileInputStream(path)) {
-            
+            log.info("enter one time");
             return getYamlDataObject(fis, clazz);
         } catch (FileNotFoundException ignore) {
             return null;
