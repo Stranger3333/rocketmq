@@ -1007,7 +1007,13 @@ public class PlainAccessValidatorTest {
     public void testValidateAfterUpdateAccessConfig() throws NoSuchFieldException, IllegalAccessException {
         String targetFileName = System.getProperty("rocketmq.home.dir")
             + File.separator + "conf/update.yml".replace("/", File.separator);
+        // ctest?
+        String ctest_File = System.getProperty("rocketmq.home.dir")
+        + File.separator + "conf/ctest.yml".replace("/", File.separator);
+
         System.setProperty("rocketmq.acl.plain.file", "conf/update.yml".replace("/", File.separator));
+        // ctest?
+        // System.setProperty("rocketmq.acl.plain.file", "conf/ctest.yml".replace("/", File.separator));
         PlainAccessValidator plainAccessValidator = new PlainAccessValidator();
         PlainAccessConfig plainAccessConfig = new PlainAccessConfig();
         String accessKey = "updateAccessConfig";

@@ -84,14 +84,17 @@ public class PlainPermissionManager {
 
     private final PermissionChecker permissionChecker = new PlainPermissionChecker();
 
+    // ctest path
+    String ctest = MixAll.dealFilePath(fileHome + File.separator + System.getProperty("rocketmq.acl.plain.file", "conf/ctest.yml"));
+
     public PlainPermissionManager() {
         this.defaultAclDir = MixAll.dealFilePath(fileHome + File.separator + "conf" + File.separator + "acl");
         log.info("default acl dir: " + defaultAclDir);
-        // this.defaultAclFile = MixAll.dealFilePath(fileHome + File.separator + System.getProperty("rocketmq.acl.plain.file", "conf/plain_acl.yml"));
-        this.defaultAclFile = MixAll.dealFilePath(fileHome + File.separator + System.getProperty("rocketmq.acl.plain.file", "conf/ctest.yml"));
+        this.defaultAclFile = MixAll.dealFilePath(fileHome + File.separator + System.getProperty("rocketmq.acl.plain.file", "conf/plain_acl.yml"));
         log.info("default acl file: " + defaultAclFile);
         load();
         // load(ctest);
+        load(ctest);
         watch();
     }
 
@@ -132,10 +135,12 @@ public class PlainPermissionManager {
 
         fileList = getAllAclFiles(defaultAclDir);
         if (new File(defaultAclFile).exists() && !fileList.contains(defaultAclFile)) {
+            // need to check whether enter this step
+            log.warn("new file added : line 136 PlainPermissionManager.java");
             fileList.add(defaultAclFile);
         }
         // ctest debugging printout
-        log.info("file list size: " + fileList.size());
+        
 
         for (int i = 0; i < fileList.size(); i++) {
             final String currentFile = MixAll.dealFilePath(fileList.get(i));

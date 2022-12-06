@@ -65,7 +65,7 @@ public class Configuration {
     public Configuration(InternalLogger log, String storePath, Object... configObjects) {
         this(log, configObjects);
         this.storePath = storePath;
-        log.warn("Config store path: "+storePath);
+        log.warn("Config store path: " + storePath);
     }
 
     /**
@@ -295,7 +295,7 @@ public class Configuration {
         {
             stringBuilder.append(MixAll.properties2String(this.allConfigs, true));
         }
-        log.warn("Internal Configs: "+stringBuilder.toString());
+        log.warn("Internal Configs: " + stringBuilder.toString());
         return stringBuilder.toString();
     }
 
