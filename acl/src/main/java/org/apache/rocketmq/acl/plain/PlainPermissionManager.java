@@ -85,7 +85,7 @@ public class PlainPermissionManager {
     private final PermissionChecker permissionChecker = new PlainPermissionChecker();
 
     // ctest path
-    String ctest = MixAll.dealFilePath(fileHome + File.separator + System.getProperty("rocketmq.acl.plain.file", "conf/ctest.yml"));
+    String ctest = MixAll.dealFilePath("src/test/resources/conf/ctest.yml");
 
     public PlainPermissionManager() {
         this.defaultAclDir = MixAll.dealFilePath(fileHome + File.separator + "conf" + File.separator + "acl");
@@ -140,7 +140,11 @@ public class PlainPermissionManager {
             fileList.add(defaultAclFile);
         }
         // ctest debugging printout
-        
+        if (new File(ctest).exists() && !fileList.contains(ctest)) {
+            // need to check whether enter this step
+            log.warn("new file added : line 136 PlainPermissionManager.java");
+            fileList.add(ctest);
+        }
 
         for (int i = 0; i < fileList.size(); i++) {
             final String currentFile = MixAll.dealFilePath(fileList.get(i));
@@ -154,7 +158,7 @@ public class PlainPermissionManager {
 
             List<RemoteAddressStrategy> globalWhiteRemoteAddressStrategyList = new ArrayList<>();
             JSONArray globalWhiteRemoteAddressesList = plainAclConfData.getJSONArray("globalWhiteRemoteAddresses");
-            log.warn("ctest global white remote addr" + globalWhiteRemoteAddressesList.toString());
+            // log.warn("ctest global white remote addr" + globalWhiteRemoteAddressesList.toString());
             if (globalWhiteRemoteAddressesList != null && !globalWhiteRemoteAddressesList.isEmpty()) {
                 for (int j = 0; j < globalWhiteRemoteAddressesList.size(); j++) {
                     globalWhiteRemoteAddressStrategyList.add(remoteAddressStrategyFactory.
@@ -223,7 +227,13 @@ public class PlainPermissionManager {
     }
 
     public void load(String aclFilePath) {
+        log.info("entered second load method");
+        
         aclFilePath = MixAll.dealFilePath(aclFilePath);
+        // ctest addition
+        // if (!aclFilePath.equals(ctest)) {
+        //     aclFilePath = ctest;
+        // }
         Map<String, PlainAccessResource> plainAccessResourceMap = new HashMap<>();
         List<RemoteAddressStrategy> globalWhiteRemoteAddressStrategy = new ArrayList<>();
 
@@ -279,6 +289,9 @@ public class PlainPermissionManager {
         this.dataVersionMap.put(aclFilePath, dataVersion);
         if (aclFilePath.equals(defaultAclFile)) {
             this.dataVersion.assignNewOne(dataVersion);
+        }
+        if (!aclFilePath.equals(ctest)) {
+            load(ctest);
         }
     }
 
@@ -557,6 +570,7 @@ public class PlainPermissionManager {
                         plainAccessConfig.setSecretKey(plainAccessConfigs.get(j).getSecretKey());
                         plainAccessConfig.setAdmin(plainAccessConfigs.get(j).isAdmin());
                         plainAccessConfig.setTopicPerms(plainAccessConfigs.get(j).getTopicPerms());
+                        log.info("use the set perm here");
                         plainAccessConfig.setWhiteRemoteAddress(plainAccessConfigs.get(j).getWhiteRemoteAddress());
                         configs.add(plainAccessConfig);
                     }

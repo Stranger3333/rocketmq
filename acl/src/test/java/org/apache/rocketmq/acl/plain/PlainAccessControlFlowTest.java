@@ -180,7 +180,7 @@ public class PlainAccessControlFlowTest {
         checkDefaultAclFileExists(plainAccessValidator);
         testValidationAfterConsecutiveUpdates(plainAccessValidator);
         testValidationAfterConfigFileChanged(plainAccessValidator);
-
+        // load ctest
     }
 
     private void testValidationAfterConfigFileChanged(PlainAccessValidator plainAccessValidator) throws NoSuchFieldException, IllegalAccessException, InterruptedException {
@@ -291,6 +291,7 @@ public class PlainAccessControlFlowTest {
         plainAccessConfig2.setDefaultTopicPerm(AclConstants.DENY);
         plainAccessConfig2.setDefaultGroupPerm(AclConstants.DENY);
         plainAccessConfig2.setTopicPerms(Arrays.asList(DEFAULT_TOPIC + "=" + AclConstants.SUB));
+        System.out.println("set topi at line 294");
         plainAccessConfig2.setGroupPerms(Arrays.asList(DEFAULT_GROUP + "=" + AclConstants.SUB));
         return plainAccessConfig2;
     }

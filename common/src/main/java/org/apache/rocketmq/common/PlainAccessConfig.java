@@ -88,7 +88,7 @@ public class PlainAccessConfig {
     }
 
     public boolean isAdmin() {
-        log.warn("[CTEST][GET-PARAM] " + "admin" + "| admin value:" + admin + "|"); //CTEST
+        log.warn("[CTEST][GET-PARAM] " + "admin"); //CTEST
 
         return admin;
     }
@@ -113,7 +113,7 @@ public class PlainAccessConfig {
 
     public String getDefaultGroupPerm() {
         log.warn("[CTEST][GET-PARAM] " + "defaultGroupPerm"); //CTEST
-        log.warn("default group perm is:" + defaultGroupPerm);
+        // log.warn("default group perm is:" + defaultGroupPerm);
         return defaultGroupPerm;
     }
 

@@ -20,3 +20,18 @@ accounts:
   secretKey: 12345678
   whiteRemoteAddress: 192.168.1.*
   admin: true
+- accessKey: rocketmq3
+  secretKey: '1234567891'
+  whiteRemoteAddress: 192.168.0.*
+  admin: false
+  defaultTopicPerm: SUB
+  defaultGroupPerm: PUB
+  topicPerms:
+  - topicC=PUB|SUB
+  - topicB=PUB
+  groupPerms:
+  - groupB=PUB|SUB
+  - groupC=DENY
+dataVersion:
+- counter: 2
+  timestamp: 1670715303753
