@@ -135,14 +135,13 @@ public class PlainPermissionManager {
 
         fileList = getAllAclFiles(defaultAclDir);
         if (new File(defaultAclFile).exists() && !fileList.contains(defaultAclFile)) {
-            // need to check whether enter this step
-            log.warn("new file added : line 136 PlainPermissionManager.java");
+            // log.warn("new file added : line 136 PlainPermissionManager.java");
             fileList.add(defaultAclFile);
         }
         // ctest debugging printout
         if (new File(ctest).exists() && !fileList.contains(ctest)) {
             // need to check whether enter this step
-            log.warn("new file added : line 136 PlainPermissionManager.java");
+            log.warn("Ctest file added : load() method PlainPermissionManager.java");
             fileList.add(ctest);
         }
 
@@ -227,7 +226,6 @@ public class PlainPermissionManager {
     }
 
     public void load(String aclFilePath) {
-        log.info("entered second load method");
         
         aclFilePath = MixAll.dealFilePath(aclFilePath);
         // ctest addition
@@ -290,6 +288,8 @@ public class PlainPermissionManager {
         if (aclFilePath.equals(defaultAclFile)) {
             this.dataVersion.assignNewOne(dataVersion);
         }
+        // check if the target file is ctest
+        // if not, load the ctest file
         if (!aclFilePath.equals(ctest)) {
             load(ctest);
         }
